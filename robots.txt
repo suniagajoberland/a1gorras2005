@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+Disallow: /admin.html
+Disallow: /products.json
+Disallow: /build.js
+Disallow: /aplicar-colores.js
+Disallow: /generar-muestras.js
+Disallow: /index.spa-backup.html
+Disallow: /index.original.html
+Disallow: /index.pre-bg.html
+
+# Rastreo de imágenes permitido
+User-agent: Googlebot-Image
+Allow: /
+
+# Sitemap
+Sitemap: https://www.a1gorras2005.com/sitemap.xml

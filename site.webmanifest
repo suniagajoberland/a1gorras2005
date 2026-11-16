@@ -1,0 +1,16 @@
+{
+  "name": "A1 GORRAS 2005 C.A",
+  "short_name": "A1 Gorras",
+  "description": "Gorras, viseras, sombreros y pasamontañas al detal, al mayor y gran mayor en Caracas, Venezuela. Bordado 3D, sublimación y personalización.",
+  "lang": "es-VE",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0E0B1D",
+  "theme_color": "#0E0B1D",
+  "categories": ["shopping", "business"],
+  "icons": [
+    { "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}

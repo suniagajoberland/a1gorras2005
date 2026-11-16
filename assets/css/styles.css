@@ -1,0 +1,88 @@
+/* A1 GORRAS 2005 C.A - estilos personalizados */
+body {
+    background-color: #0E0B1D;
+    color: #C9C2E3;
+    overflow-x: hidden;
+}
+
+.perspective-1000 {
+    perspective: 1200px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+.flip-card.is-flipped .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 1rem;
+}
+
+.flip-card-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotateY(180deg);
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #0E0B1D;
+}
+::-webkit-scrollbar-thumb {
+    background: #3A3A52;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #5A3B8C;
+}
+
+.ambient-glow {
+    box-shadow: 0 10px 35px -10px rgba(90, 59, 140, 0.45);
+}
+
+/* Acento dinamico por tarjeta (usa el color de gorra seleccionado) */
+.acc-card-front {
+    border-color: var(--accent-mid);
+    box-shadow: 0 10px 35px -10px var(--accent-mid);
+}
+.acc-card-back {
+    border-color: var(--accent-strong);
+    box-shadow: 0 20px 45px -18px var(--accent-strong);
+}
+.acc-badge {
+    background-color: var(--accent-soft);
+    border-color: var(--accent-mid);
+    color: #F3F0FF;
+}
+.acc-btn {
+    background-color: var(--accent);
+    color: var(--accent-contrast);
+    transition: filter 0.2s ease;
+}
+.acc-btn:hover {
+    filter: brightness(1.18);
+}
+.acc-ring {
+    border-color: var(--accent-strong);
+    box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.swatch-scroll::-webkit-scrollbar {
+    width: 6px;
+}

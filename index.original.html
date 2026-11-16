@@ -1,0 +1,3083 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A1 gorras 2005 c.a | Gorras, Bordados y Sublimación</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <style>
+      :root {
+        --bg-deep: #0a0c10;
+        --bg-card: rgba(22, 26, 34, 0.65);
+        --bg-card-hover: rgba(30, 36, 48, 0.85);
+        --gold-primary: #d4af37;
+        --gold-light: #f3e5ab;
+        --gold-dark: #aa820a;
+        --gold-glow: rgba(212, 175, 55, 0.25);
+        --glass-border: rgba(212, 175, 55, 0.22);
+        --text-main: #f1f5f9;
+        --text-muted: #94a3b8;
+        --whatsapp-green: #25d366;
+        --radius-lg: 16px;
+        --radius-md: 10px;
+        --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+
+      body {
+        background-color: var(--bg-deep);
+        color: var(--text-main);
+        overflow-x: hidden;
+        line-height: 1.5;
+      }
+
+      /* Glassmorphism Classes */
+      .glass-panel {
+        background: var(--bg-card);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid var(--glass-border);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+      }
+
+      /* Header Navigation */
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        transition: var(--transition);
+        padding: 1rem 1.5rem;
+      }
+
+      header.scrolled {
+        background: rgba(10, 12, 16, 0.9);
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid var(--glass-border);
+        padding: 0.75rem 1.5rem;
+      }
+
+      .nav-container {
+        max-width: 1600px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.5rem;
+      }
+
+      .brand-logo {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        text-decoration: none;
+        color: var(--text-main);
+        white-space: nowrap;
+      }
+
+      .brand-logo i {
+        font-size: 1.8rem;
+        color: var(--gold-primary);
+      }
+
+      .brand-text {
+        display: flex;
+        flex-direction: column;
+        line-height: 1.1;
+      }
+
+      .brand-name {
+        font-size: 1.1rem;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        background: linear-gradient(135deg, #fff 0%, var(--gold-light) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        white-space: nowrap;
+      }
+
+      /* Search Bar in Header */
+      .search-container {
+        flex: 1;
+        max-width: 500px;
+        position: relative;
+      }
+
+      .search-input {
+        width: 100%;
+        padding: 0.65rem 1rem 0.65rem 2.8rem;
+        border-radius: 50px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid var(--glass-border);
+        color: var(--text-main);
+        font-size: 0.9rem;
+        outline: none;
+        transition: var(--transition);
+      }
+
+      .search-input:focus {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: var(--gold-primary);
+        box-shadow: 0 0 15px var(--gold-glow);
+      }
+
+      .search-icon {
+        position: absolute;
+        left: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--gold-primary);
+        font-size: 0.9rem;
+      }
+
+      .btn-gold {
+        background: linear-gradient(
+          135deg,
+          var(--gold-primary) 0%,
+          var(--gold-dark) 100%
+        );
+        color: #000;
+        font-weight: 700;
+        padding: 0.6rem 1.2rem;
+        border-radius: 50px;
+        border: none;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.85rem;
+        transition: var(--transition);
+      }
+
+      .btn-gold:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 20px var(--gold-glow);
+      }
+
+      /* Hero Section with Parallax Video */
+      .hero-section {
+        position: relative;
+        height: 70vh;
+        min-height: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        padding-top: 60px;
+      }
+
+      .hero-mosaic {
+        position: absolute;
+        top: -12%;
+        left: 0;
+        width: 100%;
+        height: 124%;
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+        gap: 5px;
+        opacity: 0.32;
+        z-index: 1;
+        pointer-events: none;
+        will-change: transform;
+        transform: translate3d(0, 0, 0);
+      }
+
+      .hero-mosaic img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      @media (max-width: 900px) {
+        .hero-mosaic {
+          grid-template-columns: repeat(5, 1fr);
+          grid-template-rows: repeat(10, 1fr);
+        }
+      }
+
+      @media (max-width: 640px) {
+        .hero-mosaic {
+          grid-template-columns: repeat(4, 1fr);
+          grid-template-rows: repeat(12, 1fr);
+        }
+      }
+
+      .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(
+          circle at center,
+          rgba(10, 12, 16, 0.3) 0%,
+          rgba(10, 12, 16, 0.9) 100%
+        );
+        z-index: 2;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 3;
+        text-align: center;
+        max-width: 850px;
+        padding: 2rem;
+      }
+
+      .badge-premium {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.4rem 1rem;
+        border-radius: 50px;
+        background: rgba(212, 175, 55, 0.15);
+        border: 1px solid var(--gold-primary);
+        color: var(--gold-light);
+        font-size: 0.8rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 1.5rem;
+      }
+
+      .hero-title {
+        font-size: clamp(2rem, 4.5vw, 3.5rem);
+        font-weight: 800;
+        line-height: 1.1;
+        margin-bottom: 1rem;
+        background: linear-gradient(
+          135deg,
+          #ffffff 0%,
+          #cbd5e1 50%,
+          var(--gold-light) 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .hero-subtitle {
+        font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+        color: var(--text-muted);
+        margin-bottom: 2rem;
+        font-weight: 400;
+      }
+
+      .hero-stats {
+        display: flex;
+        justify-content: center;
+        gap: 2.5rem;
+        margin-top: 1.5rem;
+      }
+
+      .stat-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .stat-number {
+        font-size: 1.4rem;
+        font-weight: 800;
+        color: var(--gold-primary);
+      }
+
+      .stat-label {
+        font-size: 0.7rem;
+        color: var(--text-muted);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      /* Products Section */
+      .products-section {
+        max-width: 1600px;
+        margin: 0 auto;
+        padding: 3rem 1.5rem;
+      }
+
+      .section-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-bottom: 2rem;
+      }
+
+      .section-title {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--text-main);
+      }
+
+      .section-subtitle {
+        font-size: 0.85rem;
+        color: var(--gold-primary);
+      }
+
+      /* Responsive Grid Config: 5 Columns Desktop / 2 Columns Mobile */
+      .products-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 1.2rem;
+        perspective: 1000px;
+      }
+
+      @media (max-width: 1200px) {
+        .products-grid {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+
+      @media (max-width: 900px) {
+        .products-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      @media (max-width: 640px) {
+        .products-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 0.8rem;
+        }
+        .products-section {
+          padding: 2rem 0.75rem;
+        }
+        .section-header {
+          text-align: center;
+          align-items: center;
+          flex-direction: column;
+        }
+      }
+
+      /* Product Card Flip 3D */
+      .card-container {
+        height: 440px;
+        perspective: 1000px;
+        position: relative;
+      }
+
+      .card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        transform-style: preserve-3d;
+        border-radius: var(--radius-lg);
+      }
+
+      .card-container.flipped .card-inner {
+        transform: rotateY(180deg);
+      }
+
+      .card-front,
+      .card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        border-radius: var(--radius-lg);
+        overflow: visible;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .card-back {
+        transform: rotateY(180deg);
+        padding: 1rem;
+        justify-content: space-between;
+        background: rgba(15, 18, 25, 0.98);
+      }
+
+      .product-image-box {
+        position: relative;
+        height: 200px;
+        width: 100%;
+        overflow: hidden;
+        border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+        background: #11141c;
+      }
+
+      .product-image-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: var(--transition);
+      }
+
+      .card-container:hover .product-image-box img {
+        transform: scale(1.08);
+      }
+
+      .badge-tag {
+        position: absolute;
+        top: 0.6rem;
+        left: 0.6rem;
+        background: rgba(10, 12, 16, 0.85);
+        border: 1px solid var(--gold-primary);
+        color: var(--gold-light);
+        padding: 0.15rem 0.4rem;
+        border-radius: 4px;
+        font-size: 0.65rem;
+        font-weight: 700;
+      }
+
+      .product-details {
+        padding: 0.8rem;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        justify-content: space-between;
+      }
+
+      .product-title {
+        font-size: 0.9rem;
+        font-weight: 700;
+        margin-bottom: 0.3rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .color-dropdown {
+        position: relative;
+        margin: 0.5rem 0;
+      }
+
+      .color-swatch {
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        flex-shrink: 0;
+        border: 2px solid rgba(255, 255, 255, 0.35);
+        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5);
+        transition: var(--transition);
+      }
+
+      .color-swatch--sm {
+        width: 16px;
+        height: 16px;
+        border-width: 1px;
+      }
+
+      .color-dropdown-toggle {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        background-color: #12151c;
+        border: 1px solid var(--glass-border);
+        border-radius: 6px;
+        padding: 0.3rem 0.5rem;
+        color: #fff;
+        font-size: 0.72rem;
+        cursor: pointer;
+        outline: none;
+        transition: var(--transition);
+      }
+
+      .color-dropdown-toggle:hover,
+      .color-dropdown.open .color-dropdown-toggle {
+        border-color: var(--gold-primary);
+        box-shadow: 0 0 8px var(--gold-glow);
+      }
+
+      .color-dropdown-label {
+        flex: 1;
+        text-align: left;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .color-dropdown-caret {
+        font-size: 0.62rem;
+        color: var(--gold-primary);
+        transition: transform 0.2s;
+      }
+
+      .color-dropdown.open .color-dropdown-caret {
+        transform: rotate(180deg);
+      }
+
+      .color-dropdown-menu {
+        position: absolute;
+        top: calc(100% + 4px);
+        left: 0;
+        right: 0;
+        z-index: 5000;
+        max-height: 240px;
+        overflow-y: auto;
+        background: #12151c;
+        border: 1px solid var(--gold-primary);
+        border-radius: 8px;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
+        display: none;
+        padding: 0.25rem;
+      }
+
+      .color-dropdown-menu.open {
+        display: block;
+      }
+
+      .color-option {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.35rem 0.45rem;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 0.72rem;
+        color: #e2e8f0;
+        transition: background 0.15s;
+      }
+
+      .color-option:hover {
+        background: rgba(212, 175, 55, 0.15);
+      }
+
+      .color-option.active {
+        background: rgba(212, 175, 55, 0.22);
+        color: #fff;
+      }
+
+      .color-option-name {
+        flex: 1;
+        text-align: left;
+      }
+
+      .color-option-check {
+        font-size: 0.6rem;
+        color: var(--gold-primary);
+        opacity: 0;
+      }
+
+      .color-option.active .color-option-check {
+        opacity: 1;
+      }
+
+      .price-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 0.3rem;
+      }
+
+      .price-box {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .price-value {
+        font-size: 1.05rem;
+        font-weight: 800;
+        color: var(--gold-primary);
+      }
+
+      .price-type {
+        font-size: 0.65rem;
+        color: var(--text-muted);
+        text-transform: uppercase;
+      }
+
+      /* Qty Input */
+      .qty-picker {
+        display: flex;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 6px;
+        border: 1px solid var(--glass-border);
+        overflow: hidden;
+      }
+
+      .qty-btn {
+        background: none;
+        border: none;
+        color: var(--text-main);
+        width: 24px;
+        height: 24px;
+        cursor: pointer;
+        font-size: 0.85rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: var(--transition);
+      }
+
+      .qty-btn:hover {
+        background: rgba(212, 175, 55, 0.2);
+        color: var(--gold-light);
+      }
+
+      .qty-input {
+        width: 38px;
+        height: 24px;
+        background: transparent;
+        border: none;
+        color: var(--gold-light);
+        font-size: 0.85rem;
+        font-weight: 700;
+        text-align: center;
+        outline: none;
+        -moz-appearance: textfield;
+      }
+
+      .qty-input::-webkit-outer-spin-button,
+      .qty-input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      .btn-flip {
+        width: 100%;
+        margin-top: 0.6rem;
+        background: rgba(212, 175, 55, 0.1);
+        border: 1px solid var(--gold-primary);
+        color: var(--gold-light);
+        padding: 0.5rem;
+        border-radius: var(--radius-md);
+        font-weight: 600;
+        font-size: 0.75rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.4rem;
+        transition: var(--transition);
+      }
+
+      .btn-flip:hover {
+        background: var(--gold-primary);
+        color: #000;
+      }
+
+      /* Back Card Form & Select Options */
+      .custom-form {
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+        text-align: left;
+      }
+
+      .form-title {
+        font-size: 0.85rem;
+        font-weight: 700;
+        color: var(--gold-primary);
+        border-bottom: 1px solid var(--glass-border);
+        padding-bottom: 0.3rem;
+      }
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+      }
+
+      .form-group label {
+        font-size: 0.68rem;
+        color: var(--text-muted);
+      }
+
+      .form-control {
+        background-color: #161a22;
+        border: 1px solid var(--gold-primary);
+        border-radius: 6px;
+        padding: 0.4rem 0.6rem;
+        color: #ffffff;
+        font-size: 0.78rem;
+        outline: none;
+        transition: var(--transition);
+        width: 100%;
+      }
+
+      select.form-control {
+        appearance: auto;
+        -webkit-appearance: listbox;
+        color: #ffffff;
+        background-color: #12151c;
+        cursor: pointer;
+      }
+
+      select.form-control option {
+        background-color: #12151c;
+        color: #ffffff;
+        padding: 0.4rem;
+      }
+
+      .btn-ws-send {
+        background: #25d366;
+        color: #000;
+        font-weight: 700;
+        border: none;
+        padding: 0.6rem;
+        border-radius: var(--radius-md);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.4rem;
+        font-size: 0.8rem;
+        transition: var(--transition);
+        margin-top: 0.3rem;
+      }
+
+      .btn-ws-send:hover {
+        background: #1ebc57;
+        box-shadow: 0 0 15px rgba(37, 211, 102, 0.4);
+      }
+
+      .btn-cancel {
+        background: transparent;
+        border: none;
+        color: var(--text-muted);
+        font-size: 0.7rem;
+        cursor: pointer;
+        text-align: center;
+        margin-top: 0.2rem;
+      }
+
+      /* Pagination */
+      .pagination-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+        margin-top: 2.5rem;
+      }
+
+      .page-btn {
+        width: 36px;
+        height: 36px;
+        border-radius: 8px;
+        background: var(--bg-card);
+        border: 1px solid var(--glass-border);
+        color: var(--text-main);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: var(--transition);
+      }
+
+      .page-btn.active,
+      .page-btn:hover {
+        background: var(--gold-primary);
+        color: #000;
+        border-color: var(--gold-primary);
+        font-weight: 700;
+      }
+
+      /* Google Reviews Section */
+      .reviews-section {
+        max-width: 1600px;
+        margin: 3rem auto;
+        padding: 0 1.5rem;
+      }
+
+      .reviews-card {
+        padding: 2rem;
+        border-radius: var(--radius-lg);
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      .reviews-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1.2rem;
+      }
+
+      .google-rating {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .google-icon {
+        font-size: 2rem;
+        color: #4285f4;
+      }
+
+      .rating-score {
+        font-size: 1.8rem;
+        font-weight: 800;
+      }
+
+      .stars {
+        color: #fbbc05;
+        font-size: 0.85rem;
+      }
+
+      .reviews-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 1.2rem;
+      }
+
+      .review-item {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: var(--radius-md);
+        padding: 1rem;
+      }
+
+      .review-user {
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
+        margin-bottom: 0.6rem;
+      }
+
+      .user-avatar {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: var(--gold-primary);
+        color: #000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 0.8rem;
+      }
+
+      .user-meta h4 {
+        font-size: 0.85rem;
+      }
+
+      .user-meta span {
+        font-size: 0.65rem;
+        color: var(--text-muted);
+      }
+
+      .review-text {
+        font-size: 0.8rem;
+        color: var(--text-muted);
+      }
+
+      /* Floating WhatsApp Button */
+      .whatsapp-float {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        width: 55px;
+        height: 55px;
+        background: var(--whatsapp-green);
+        color: #fff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.7rem;
+        box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+        z-index: 999;
+        text-decoration: none;
+        transition: var(--transition);
+        animation: pulse 2s infinite;
+      }
+
+      .whatsapp-float:hover {
+        transform: scale(1.1);
+      }
+
+      @keyframes pulse {
+        0% {
+          box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+        }
+        70% {
+          box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+        }
+      }
+
+      /* Footer */
+      footer {
+        border-top: 1px solid var(--glass-border);
+        padding: 2.5rem 1.5rem 1.5rem;
+        background: rgba(10, 12, 16, 0.95);
+        margin-top: 3rem;
+      }
+
+      .footer-content {
+        max-width: 1600px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 2rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .footer-brand {
+        max-width: 320px;
+      }
+
+      .footer-brand p {
+        color: var(--text-muted);
+        font-size: 0.8rem;
+        margin-top: 0.8rem;
+      }
+
+      .footer-bottom {
+        max-width: 1600px;
+        margin: 0 auto;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        padding-top: 1.2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: 0.8rem;
+        color: var(--text-muted);
+      }
+
+      /* Modal Review */
+      .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(8px);
+        z-index: 2000;
+        display: none;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .modal-card {
+        width: 90%;
+        max-width: 420px;
+        padding: 1.8rem;
+        border-radius: var(--radius-lg);
+      }
+
+      @media (max-width: 768px) {
+        .nav-container {
+          flex-wrap: wrap;
+        }
+        .search-container {
+          order: 3;
+          width: 100%;
+          max-width: 100%;
+        }
+        .hero-stats {
+          gap: 1.2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header Navigation -->
+    <header id="navbar">
+      <div class="nav-container">
+        <a href="#" class="brand-logo">
+          <i class="fa-solid fa-crown"></i>
+          <div class="brand-text">
+            <span class="brand-name">A1 GORRAS 2005 C.A</span>
+          </div>
+        </a>
+
+        <!-- Search Bar in navbar -->
+        <div class="search-container">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <input
+            type="text"
+            id="searchInput"
+            class="search-input"
+            placeholder="Buscar gorras, bordados o sublimación..."
+          />
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section with Parallax Mosaic of All Models -->
+    <section class="hero-section" id="heroSection">
+      <div class="hero-mosaic" id="heroMosaic"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <div class="badge-premium">
+          <i class="fa-solid fa-star"></i> Fabricación & Personalización
+        </div>
+        <h1 class="hero-title">Gorras Exclusivas, Bordados & Sublimación</h1>
+        <p class="hero-subtitle">
+          Ventas al detal y al mayor. Calidad de nivel internacional con
+          tecnología de bordado 3D y acabados de lujo.
+        </p>
+
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-number">+20K</span>
+            <span class="stat-label">Gorras Entregadas</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Personalizable</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">Mayor / Detal</span>
+            <span class="stat-label">Precios Directos</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Products Container -->
+    <section class="products-section">
+      <div class="section-header">
+        <div>
+          <span class="section-subtitle">Catálogo Oficial</span>
+          <h2 class="section-title">Gorras & Servicios de Bordado</h2>
+        </div>
+      </div>
+
+      <div class="products-grid" id="productsGrid">
+        <!-- Dynamic Product Cards Injected by JS -->
+      </div>
+
+      <!-- Pagination (Max 20 Cards) -->
+      <div class="pagination-container" id="pagination">
+        <!-- Page buttons injected by JS -->
+      </div>
+    </section>
+
+    <!-- Google Reviews Section -->
+    <section class="reviews-section">
+      <div class="reviews-card glass-panel">
+        <div class="reviews-header">
+          <div>
+            <span class="section-subtitle">Opiniones Reales</span>
+            <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+          </div>
+          <div class="google-rating">
+            <i class="fa-brands fa-google google-icon"></i>
+            <div>
+              <div class="rating-score">4.9 / 5.0</div>
+              <div class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+            </div>
+          </div>
+          <button class="btn-gold" id="openReviewModal">
+            <i class="fa-solid fa-pen"></i> Dejar Reseña en Google
+          </button>
+        </div>
+
+        <div class="reviews-grid" id="reviewsGrid">
+          <div class="review-item">
+            <div class="review-user">
+              <div class="user-avatar">JM</div>
+              <div class="user-meta">
+                <h4>Jesús Mendoza</h4>
+                <span>Hace 2 días</span>
+              </div>
+            </div>
+            <p class="review-text">
+              La calidad del bordado 3D de A1 gorras 2005 es impecable. Pedí 50
+              gorras para mi empresa y llegaron antes del tiempo estimado.
+            </p>
+          </div>
+          <div class="review-item">
+            <div class="review-user">
+              <div class="user-avatar">CR</div>
+              <div class="user-meta">
+                <h4>Carlos Rodríguez</h4>
+                <span>Hace 1 semana</span>
+              </div>
+            </div>
+            <p class="review-text">
+              Excelente atención por WhatsApp. Las gorras de béisbol acrílicas
+              tienen un calce perfecto y la sublimación no pierde color.
+            </p>
+          </div>
+          <div class="review-item">
+            <div class="review-user">
+              <div class="user-avatar">AV</div>
+              <div class="user-meta">
+                <h4>Andrea Villegas</h4>
+                <span>Hace 3 semanas</span>
+              </div>
+            </div>
+            <p class="review-text">
+              Superó mis expectativas. Pude personalizar mi gorra desde la
+              página web y enviar los datos directamente al taller.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Floating WhatsApp CTA -->
+    <a
+      href="https://wa.me/584120000000?text=Hola%20A1%20gorras%202005%20c.a,%20quisiera%20consultar%20por%20un%20pedido"
+      class="whatsapp-float"
+      target="_blank"
+      title="Contactar por WhatsApp"
+    >
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-brand">
+          <a href="#" class="brand-logo">
+            <i class="fa-solid fa-crown"></i>
+            <div class="brand-text">
+              <span class="brand-name">A1 GORRAS 2005 C.A</span>
+            </div>
+          </a>
+          <p>
+            Especialistas en confección de gorras, servicio de bordado
+            computarizado de alta definición y sublimación. Ventas al detal y
+            mayorista.
+          </p>
+        </div>
+        <div>
+          <h4 style="color: var(--gold-primary); margin-bottom: 1rem">
+            Contacto & Taller
+          </h4>
+          <p style="color: var(--text-muted); font-size: 0.85rem">
+            <i class="fa-solid fa-location-dot"></i> Venezuela
+          </p>
+          <p style="color: var(--text-muted); font-size: 0.85rem">
+            <i class="fa-solid fa-phone"></i> +58 412-0000000
+          </p>
+          <p style="color: var(--text-muted); font-size: 0.85rem">
+            <i class="fa-solid fa-envelope"></i> ventas@a1gorras2005.com
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 A1 gorras 2005 c.a. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+
+    <!-- Review Modal -->
+    <div class="modal-overlay" id="reviewModal">
+      <div class="modal-card glass-panel">
+        <h3 class="form-title" style="margin-bottom: 1rem">
+          Escribir Reseña para Google
+        </h3>
+        <form id="reviewForm" class="custom-form">
+          <div class="form-group">
+            <label>Nombre Completo</label>
+            <input
+              type="text"
+              id="revName"
+              class="form-control"
+              required
+              placeholder="Tu nombre"
+            />
+          </div>
+          <div class="form-group">
+            <label>Calificación</label>
+            <select id="revStars" class="form-control">
+              <option value="5">⭐⭐⭐⭐⭐ (5/5)</option>
+              <option value="4">⭐⭐⭐⭐ (4/5)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Tu Comentario</label>
+            <textarea
+              id="revComment"
+              class="form-control"
+              rows="3"
+              required
+              placeholder="Cuenta tu experiencia con A1 gorras 2005 c.a..."
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            class="btn-gold"
+            style="width: 100%; margin-top: 0.5rem"
+          >
+            Publicar Reseña
+          </button>
+          <button type="button" class="btn-cancel" id="closeReviewModal">
+            Cancelar
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Script Application -->
+    <script>
+      const productsData = [
+  {
+    "id": "G-01",
+    "title": "Gorras Unicolor Acrílicas Para Bordar Con Cierre Mágico",
+    "priceDetal": 2,
+    "priceMayor": 1.4,
+    "category": "Gorras",
+    "colorCount": 30,
+    "url": "https://articulo.mercadolibre.com.ve/MLV-977064658-gorras-unicolor-acrilicas-para-bordar-con-cierre-magico-_JM?searchVariation=199073162543",
+    "colors": [
+      {
+        "name": "Violeta",
+        "hex": "#7F00FF",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_920830-MLV108725125844_032026-F.webp"
+      },
+      {
+        "name": "Aguamarina",
+        "hex": "#7FFFD4",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_741416-MLV112332531861_052026-F.webp"
+      },
+      {
+        "name": "Amarillo",
+        "hex": "#FFED00",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_698338-MLV108725991106_032026-F.webp"
+      },
+      {
+        "name": "Amarillo (Bandera)",
+        "hex": "#FFD100",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_877946-MLV109549894757_032026-F.webp"
+      },
+      {
+        "name": "Amarillo Caterpila",
+        "hex": "#FFC72C",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_904053-MLV108735444036_032026-F.webp"
+      },
+      {
+        "name": "Amarillo Neón",
+        "hex": "#FFF01F",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_898582-MLV108732578926_032026-F.webp"
+      },
+      {
+        "name": "Azul rey",
+        "hex": "#1E3FBF",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_850646-MLV108728560308_032026-F.webp"
+      },
+      {
+        "name": "Azul Turquesa",
+        "hex": "#30C0C0",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_982109-MLV109549963609_032026-F.webp"
+      },
+      {
+        "name": "Beige claro",
+        "hex": "#F7F4E3",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_754845-MLV108732441008_032026-F.webp"
+      },
+      {
+        "name": "Beige oscuro",
+        "hex": "#D9CFA5",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_645162-MLV108732427548_032026-F.webp"
+      },
+      {
+        "name": "Blanco",
+        "hex": "#FFFFFF",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_981583-MLV109540967177_032026-F.webp"
+      },
+      {
+        "name": "Celeste",
+        "hex": "#87CEEB",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_797926-MLV108735940592_032026-F.webp"
+      },
+      {
+        "name": "Fucsia",
+        "hex": "#FF00EC",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_826096-MLV109540971491_032026-F.webp"
+      },
+      {
+        "name": "Gris",
+        "hex": "#9E9E9E",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_641486-MLV109552168745_032026-F.webp"
+      },
+      {
+        "name": "Gris oscuro",
+        "hex": "#555555",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_868097-MLV108730518356_032026-F.webp"
+      },
+      {
+        "name": "Lila",
+        "hex": "#CC87FF",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_729714-MLV108732578828_032026-F.webp"
+      },
+      {
+        "name": "Marrón oscuro",
+        "hex": "#6B4226",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_887944-MLV108732702944_032026-F.webp"
+      },
+      {
+        "name": "Mostaza",
+        "hex": "#D4A017",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_615282-MLV109545302521_032026-F.webp"
+      },
+      {
+        "name": "Naranja",
+        "hex": "#FF8C00",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_852214-MLV108735442584_032026-F.webp"
+      },
+      {
+        "name": "Naranja ladrillo",
+        "hex": "#CC5500",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_717769-MLV108730461908_032026-F.webp"
+      },
+      {
+        "name": "Naranja neón",
+        "hex": "#FF5F1F",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_757806-MLV109551027313_032026-F.webp"
+      },
+      {
+        "name": "Negro",
+        "hex": "#111111",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_663328-MLV111297503194_052026-F.webp"
+      },
+      {
+        "name": "Rojo",
+        "hex": "#FF0000",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_766753-MLV108730613330_032026-F.webp"
+      },
+      {
+        "name": "Rosa",
+        "hex": "#FCB1BE",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_750458-MLV108725901456_032026-F.webp"
+      },
+      {
+        "name": "Verde Brasil",
+        "hex": "#009739",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_941819-MLV112334584717_052026-F.webp"
+      },
+      {
+        "name": "Verde manzana",
+        "hex": "#8DB600",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_638681-MLV109549834139_032026-F.webp"
+      },
+      {
+        "name": "Verde neón",
+        "hex": "#39FF14",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_761276-MLV108725922512_032026-F.webp"
+      },
+      {
+        "name": "Verde oliva",
+        "hex": "#6B8E23",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_881391-MLV108730613812_032026-F.webp"
+      },
+      {
+        "name": "Verde oscuro",
+        "hex": "#003D00",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_604095-MLV108730620604_032026-F.webp"
+      },
+      {
+        "name": "Vino tinto",
+        "hex": "#722F37",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_951366-MLV110279173047_042026-F.webp"
+      }
+    ]
+  },
+  {
+    "id": "G-02",
+    "title": "Viseras Unicolor Deportiva Cierre Mágico",
+    "priceDetal": 3,
+    "priceMayor": 2.1,
+    "category": "Viseras",
+    "colorCount": 10,
+    "url": "https://articulo.mercadolibre.com.ve/MLV-985137718-viseras-unicolor-deportiva-cierre-magico-_JM?searchVariation=192166946306",
+    "colors": [
+      {
+        "name": "Amarillo (Bandera)",
+        "hex": "#FFD100",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_711884-MLV109633773135_032026-F.webp"
+      },
+      {
+        "name": "Celeste",
+        "hex": "#87CEEB",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_828434-MLV109632170499_032026-F.webp"
+      },
+      {
+        "name": "Fucsia",
+        "hex": "#FF00EC",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_891840-MLV108812987186_032026-F.webp"
+      },
+      {
+        "name": "Gris",
+        "hex": "#9E9E9E",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_630342-MLV109631385207_032026-F.webp"
+      },
+      {
+        "name": "Lila",
+        "hex": "#CC87FF",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_758883-MLV109632644659_032026-F.webp"
+      },
+      {
+        "name": "Morado",
+        "hex": "#9F00FF",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_772381-MLV109632645763_032026-F.webp"
+      },
+      {
+        "name": "Naranja",
+        "hex": "#FF8C00",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_772199-MLV108862875144_032026-F.webp"
+      },
+      {
+        "name": "Rojo",
+        "hex": "#FF0000",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_827929-MLV108858939734_032026-F.webp"
+      },
+      {
+        "name": "Verde neón",
+        "hex": "#39FF14",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_895729-MLV110236029179_042026-F.webp"
+      },
+      {
+        "name": "Verde oscuro",
+        "hex": "#003D00",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_689560-MLV109632200151_032026-F.webp"
+      }
+    ]
+  },
+  {
+    "id": "G-03",
+    "title": "Gorras Unicolor Vip Completa",
+    "priceDetal": 3,
+    "priceMayor": 2.1,
+    "category": "Gorras",
+    "colorCount": 4,
+    "url": "https://articulo.mercadolibre.com.ve/MLV-1007588924-gorras-unicolor-vip-completa-_JM?searchVariation=193415915010",
+    "colors": [
+      {
+        "name": "Gris",
+        "hex": "#9E9E9E",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_921952-MLV110670120151_042026-F.webp"
+      },
+      {
+        "name": "Gris oscuro",
+        "hex": "#555555",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_934463-MLV109776598684_042026-F.webp"
+      },
+      {
+        "name": "Marrón",
+        "hex": "#A0522D",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_629349-MLV110668959527_042026-F.webp"
+      },
+      {
+        "name": "Verde",
+        "hex": "#0DA600",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_861862-MLV109776597972_042026-F.webp"
+      }
+    ]
+  },
+  {
+    "id": "G-04",
+    "title": "Pack 12 Gorras Acrílicas Bordadas Personalizadas Unicolor Multicolor Un Drill",
+    "priceDetal": 60,
+    "priceMayor": 42,
+    "category": "Packs",
+    "colorCount": 1,
+    "url": "https://articulo.mercadolibre.com.ve/MLV-777260171-pack-12-gorras-acrilicas-bordadas-personalizadas-unicolor-multicolor-un-drill-_JM",
+    "colors": [
+      {
+        "name": "Estándar",
+        "hex": "#3a3a3a",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_896103-MLV112812832893_062026-F.webp"
+      }
+    ]
+  },
+  {
+    "id": "G-05",
+    "title": "Gorras Unicolor Prelavada Vintage",
+    "priceDetal": 7,
+    "priceMayor": 4.9,
+    "category": "Gorras",
+    "colorCount": 12,
+    "url": "https://articulo.mercadolibre.com.ve/MLV-1013907674-gorras-unicolor-prelavada-vintage-_JM?searchVariation=206648131463",
+    "colors": [
+      {
+        "name": "Morado",
+        "hex": "#9F00FF",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_829026-MLV115305802122_082026-F.webp"
+      },
+      {
+        "name": "Celeste",
+        "hex": "#87CEEB",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_938645-MLV116977381143_082026-F.webp"
+      },
+      {
+        "name": "Gris",
+        "hex": "#9E9E9E",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_834119-MLV116714560925_082026-F.webp"
+      },
+      {
+        "name": "Gris oscuro",
+        "hex": "#555555",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_838288-MLV113406775907_062026-F.webp"
+      },
+      {
+        "name": "Ladrillo",
+        "hex": "#B03A2E",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_631098-MLV115306267258_082026-F.webp"
+      },
+      {
+        "name": "Marrón",
+        "hex": "#A0522D",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_891978-MLV115540388804_082026-F.webp"
+      },
+      {
+        "name": "Naranja",
+        "hex": "#FF8C00",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_858563-MLV116715279279_082026-F.webp"
+      },
+      {
+        "name": "Rojo claro",
+        "hex": "#FF6B6B",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_711474-MLV116714016839_082026-F.webp"
+      },
+      {
+        "name": "Rosa",
+        "hex": "#FCB1BE",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_838263-MLV115306051796_082026-F.webp"
+      },
+      {
+        "name": "Verde",
+        "hex": "#0DA600",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_745683-MLV116977467255_082026-F.webp"
+      },
+      {
+        "name": "Verde claro",
+        "hex": "#7CFC00",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_632499-MLV116978006015_082026-F.webp"
+      },
+      {
+        "name": "Verde manzana",
+        "hex": "#8DB600",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_923480-MLV115305818340_082026-F.webp"
+      }
+    ]
+  },
+  {
+    "id": "G-06",
+    "title": "Gorras Unicolor Acrílicas Para Niños",
+    "priceDetal": 3,
+    "priceMayor": 2.1,
+    "category": "Gorras",
+    "colorCount": 8,
+    "url": "https://articulo.mercadolibre.com.ve/MLV-1013591820-gorras-unicolor-acrilicas-para-ninos-_JM?searchVariation=195800950222",
+    "colors": [
+      {
+        "name": "Amarillo",
+        "hex": "#FFED00",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_658203-MLV112637449433_062026-F.webp"
+      },
+      {
+        "name": "Azul",
+        "hex": "#888888",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_673751-MLV112637388371_062026-F.webp"
+      },
+      {
+        "name": "Marrón",
+        "hex": "#A0522D",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_861920-MLV112638216623_062026-F.webp"
+      },
+      {
+        "name": "Mostaza",
+        "hex": "#D4A017",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_992590-MLV112638216343_062026-F.webp"
+      },
+      {
+        "name": "Naranja",
+        "hex": "#FF8C00",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_995791-MLV112637418661_062026-F.webp"
+      },
+      {
+        "name": "Rojo",
+        "hex": "#FF0000",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_990262-MLV112636938033_062026-F.webp"
+      },
+      {
+        "name": "Verde oscuro",
+        "hex": "#003D00",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_701729-MLV111570648668_062026-F.webp"
+      },
+      {
+        "name": "Violeta",
+        "hex": "#7F00FF",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_928155-MLV111570680200_062026-F.webp"
+      }
+    ]
+  },
+  {
+    "id": "G-07",
+    "title": "Gorras Unicolor Acrílica Frontal Free Sin Costura Al Frente",
+    "priceDetal": 4,
+    "priceMayor": 2.8,
+    "category": "Gorras",
+    "colorCount": 23,
+    "url": "https://articulo.mercadolibre.com.ve/MLV-978220586-gorras-unicolor-acrilica-frontal-free-sin-costura-al-frente-_JM?searchVariation=198951704873",
+    "colors": [
+      {
+        "name": "Beige",
+        "hex": "#F5F3DC",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_993571-MLV109373706515_032026-F.webp"
+      },
+      {
+        "name": "Aguamarine",
+        "hex": "#7FFFD4",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_847015-MLV108725237956_032026-F.webp"
+      },
+      {
+        "name": "Amarillo",
+        "hex": "#FFED00",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_847032-MLV109534131495_032026-F.webp"
+      },
+      {
+        "name": "Amarillo Caterpilla",
+        "hex": "#FFC72C",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_988550-MLV109533684575_032026-F.webp"
+      },
+      {
+        "name": "Azul Bebé",
+        "hex": "#A8D8FF",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_920471-MLV108723472308_032026-F.webp"
+      },
+      {
+        "name": "Azul marino",
+        "hex": "#0F5299",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_725607-MLV109538877037_032026-F.webp"
+      },
+      {
+        "name": "Azul rey",
+        "hex": "#1E3FBF",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_810969-MLV109534849525_032026-F.webp"
+      },
+      {
+        "name": "Beige oscuro",
+        "hex": "#D9CFA5",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_728775-MLV109536168527_032026-F.webp"
+      },
+      {
+        "name": "Blanco",
+        "hex": "#FFFFFF",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_792386-MLV109534793023_032026-F.webp"
+      },
+      {
+        "name": "Celeste",
+        "hex": "#87CEEB",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_975239-MLV109534817927_032026-F.webp"
+      },
+      {
+        "name": "Fucsia",
+        "hex": "#FF00EC",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_915991-MLV109371263787_032026-F.webp"
+      },
+      {
+        "name": "Gris",
+        "hex": "#9E9E9E",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_818036-MLV111350722400_052026-F.webp"
+      },
+      {
+        "name": "Lila",
+        "hex": "#CC87FF",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_857978-MLV109537393371_032026-F.webp"
+      },
+      {
+        "name": "Morado",
+        "hex": "#9F00FF",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_918668-MLV108569147880_032026-F.webp"
+      },
+      {
+        "name": "Mostaza",
+        "hex": "#D4A017",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_809229-MLV109538215235_032026-F.webp"
+      },
+      {
+        "name": "Naranja Ladrillo",
+        "hex": "#CC5500",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_720357-MLV109534851741_032026-F.webp"
+      },
+      {
+        "name": "Negro",
+        "hex": "#111111",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_996936-MLV108305146852_032026-F.webp"
+      },
+      {
+        "name": "Rojo",
+        "hex": "#FF0000",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_926860-MLV109371379873_032026-F.webp"
+      },
+      {
+        "name": "Turquesa",
+        "hex": "#40E0D0",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_704467-MLV108569124438_032026-F.webp"
+      },
+      {
+        "name": "Verde",
+        "hex": "#0DA600",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_659590-MLV108723538520_032026-F.webp"
+      },
+      {
+        "name": "Verde limón",
+        "hex": "#BFFF00",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_622656-MLV109534846737_032026-F.webp"
+      },
+      {
+        "name": "Verde neón",
+        "hex": "#39FF14",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_928172-MLV109537383401_032026-F.webp"
+      },
+      {
+        "name": "Vino tinto",
+        "hex": "#722F37",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_630982-MLV109373551957_032026-F.webp"
+      }
+    ]
+  },
+  {
+    "id": "G-08",
+    "title": "Gorras Vip Bicolor De Malla Con Broche Plástico",
+    "priceDetal": 3,
+    "priceMayor": 2.1,
+    "category": "Gorras",
+    "colorCount": 1,
+    "url": "https://articulo.mercadolibre.com.ve/MLV-1010564740-gorras-vip-bicolor-de-malla-con-broche-plastico-_JM?searchVariation=201755048111",
+    "colors": [
+      {
+        "name": "Estándar",
+        "hex": "#3a3a3a",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_660332-MLV119027931178_112026-F.webp"
+      }
+    ]
+  },
+  {
+    "id": "G-09",
+    "title": "Gorras Bicolor Acrílica Cierre Mágico",
+    "priceDetal": 3,
+    "priceMayor": 2.1,
+    "category": "Gorras",
+    "colorCount": 1,
+    "url": "https://articulo.mercadolibre.com.ve/MLV-977388904-gorras-bicolor-acrilica-cierre-magico-_JM?searchVariation=199171922641",
+    "colors": [
+      {
+        "name": "Multicolor",
+        "hex": "#777777",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_813101-MLV109626723923_032026-F.webp"
+      }
+    ]
+  },
+  {
+    "id": "G-10",
+    "title": "Gorras Platinium Bicolor Frontal Free",
+    "priceDetal": 7,
+    "priceMayor": 4.9,
+    "category": "Gorras",
+    "colorCount": 1,
+    "url": "https://articulo.mercadolibre.com.ve/MLV-1009060972-gorras-platinium-bicolor-frontal-free-_JM?searchVariation=203348668503",
+    "colors": [
+      {
+        "name": "Multicolor",
+        "hex": "#777777",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_869100-MLV111724264652_062026-F.webp"
+      }
+    ]
+  },
+  {
+    "id": "G-11",
+    "title": "Gorras Unicolor Malla Modelo Ff Broche Plástico",
+    "priceDetal": 4,
+    "priceMayor": 2.8,
+    "category": "Gorras",
+    "colorCount": 3,
+    "url": "https://articulo.mercadolibre.com.ve/MLV-978117262-gorras-unicolor-malla-modelo-ff-broche-plastico-_JM?searchVariation=199426320765",
+    "colors": [
+      {
+        "name": "Rojo",
+        "hex": "#FF0000",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_843931-MLV109086935644_042026-F.webp"
+      },
+      {
+        "name": "Amarillo",
+        "hex": "#FFED00",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_843931-MLV109086935644_042026-F.webp"
+      },
+      {
+        "name": "Multicolor",
+        "hex": "#777777",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_843931-MLV109086935644_042026-F.webp"
+      }
+    ]
+  },
+  {
+    "id": "G-12",
+    "title": "Gorras Unicolor Acrílica Broche Caimán Metálico",
+    "priceDetal": 3,
+    "priceMayor": 2.1,
+    "category": "Gorras",
+    "colorCount": 3,
+    "url": "https://articulo.mercadolibre.com.ve/MLV-977246562-gorras-unicolor-acrilica-broche-caiman-metalico-_JM?searchVariation=198887756139",
+    "colors": [
+      {
+        "name": "Fucsia",
+        "hex": "#FF00EC",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_702761-MLV109287067595_032026-F.webp"
+      },
+      {
+        "name": "Rojo",
+        "hex": "#FF0000",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_702761-MLV109287067595_032026-F.webp"
+      },
+      {
+        "name": "Multicolor",
+        "hex": "#777777",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_702761-MLV109287067595_032026-F.webp"
+      }
+    ]
+  },
+  {
+    "id": "G-13",
+    "title": "Pack 6 Gorras Acrílicas Bordadas Personalizadas Unicolor",
+    "priceDetal": 36,
+    "priceMayor": 25.2,
+    "category": "Packs",
+    "colorCount": 1,
+    "url": "https://articulo.mercadolibre.com.ve/MLV-1013927420-pack-6-gorras-acrilicas-bordadas-personalizadas-unicolor-_JM?searchVariation=203391374149",
+    "colors": [
+      {
+        "name": "Estándar",
+        "hex": "#3a3a3a",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_983281-MLV112816855419_062026-F.webp"
+      }
+    ]
+  },
+  {
+    "id": "G-14",
+    "title": "Gorras Camuflada Regulada Con Cierre Mágico",
+    "priceDetal": 3,
+    "priceMayor": 2.1,
+    "category": "Gorras",
+    "colorCount": 3,
+    "url": "https://articulo.mercadolibre.com.ve/MLV-978156566-gorras-camuflada-regulada-con-cierre-magico-_JM?searchVariation=199141871251",
+    "colors": [
+      {
+        "name": "Color",
+        "hex": "#E1E1E1",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_860416-MLV108813198902_032026-F.webp"
+      },
+      {
+        "name": "Beige",
+        "hex": "#F5F3DC",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_860416-MLV108813198902_032026-F.webp"
+      },
+      {
+        "name": "Multicolor",
+        "hex": "#777777",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_860416-MLV108813198902_032026-F.webp"
+      }
+    ]
+  },
+  {
+    "id": "G-15",
+    "title": "Pasamontañas Unicolor Para Niños",
+    "priceDetal": 4,
+    "priceMayor": 2.8,
+    "category": "Pasamontañas",
+    "colorCount": 3,
+    "url": "https://articulo.mercadolibre.com.ve/MLV-1001662038-pasamontanas-unicolor-para-ninos-_JM?searchVariation=200060186287",
+    "colors": [
+      {
+        "name": "Fucsia",
+        "hex": "#FF00EC",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_903175-MLV109515144034_042026-F.webp"
+      },
+      {
+        "name": "Verde oscuro",
+        "hex": "#003D00",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_903175-MLV109515144034_042026-F.webp"
+      },
+      {
+        "name": "Multicolor",
+        "hex": "#777777",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_903175-MLV109515144034_042026-F.webp"
+      }
+    ]
+  },
+  {
+    "id": "G-16",
+    "title": "Gorras Camuflada Regulada De Malla",
+    "priceDetal": 3,
+    "priceMayor": 2.1,
+    "category": "Gorras",
+    "colorCount": 3,
+    "url": "https://articulo.mercadolibre.com.ve/MLV-988282668-gorras-camuflada-regulada-de-malla-_JM?searchVariation=192338131712",
+    "colors": [
+      {
+        "name": "Marrón",
+        "hex": "#A0522D",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_824240-MLV109876165669_032026-F.webp"
+      },
+      {
+        "name": "Color",
+        "hex": "#000000",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_824240-MLV109876165669_032026-F.webp"
+      },
+      {
+        "name": "Verde",
+        "hex": "#0DA600",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_824240-MLV109876165669_032026-F.webp"
+      }
+    ]
+  },
+  {
+    "id": "G-17",
+    "title": "Gorras Unicolor Premium Tres Paneles Microperforada Planas",
+    "priceDetal": 12,
+    "priceMayor": 8.4,
+    "category": "Gorras",
+    "colorCount": 3,
+    "url": "https://articulo.mercadolibre.com.ve/MLV-1012469556-gorras-unicolor-premium-tres-paneles-microperforada-planas-_JM?searchVariation=202500360333",
+    "colors": [
+      {
+        "name": "Rojo",
+        "hex": "#FF0000",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_683648-MLV112056086307_052026-F.webp"
+      },
+      {
+        "name": "Color",
+        "hex": "#000000",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_683648-MLV112056086307_052026-F.webp"
+      },
+      {
+        "name": "Multicolor",
+        "hex": "#777777",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_683648-MLV112056086307_052026-F.webp"
+      }
+    ]
+  },
+  {
+    "id": "G-18",
+    "title": "Pack 24 Gorras Acrílicas Bordadas Personalizadas Unicolor Multicolor Un Drill",
+    "priceDetal": 120,
+    "priceMayor": 84,
+    "category": "Packs",
+    "colorCount": 1,
+    "url": "https://articulo.mercadolibre.com.ve/MLV-777260871-pack-24-gorras-acrilicas-bordadas-personalizadas-unicolor-multicolor-un-drill-_JM",
+    "colors": [
+      {
+        "name": "Estándar",
+        "hex": "#3a3a3a",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_636788-MLV112930715519_062026-F.webp"
+      }
+    ]
+  },
+  {
+    "id": "G-19",
+    "title": "Gorras Unicolor Planas Completa",
+    "priceDetal": 3,
+    "priceMayor": 2.1,
+    "category": "Gorras",
+    "colorCount": 3,
+    "url": "https://articulo.mercadolibre.com.ve/MLV-988166252-gorras-unicolor-planas-completa-_JM?searchVariation=199375380873",
+    "colors": [
+      {
+        "name": "Amarillo",
+        "hex": "#FFED00",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_780890-MLV109041447080_032026-F.webp"
+      },
+      {
+        "name": "Beige",
+        "hex": "#F5F3DC",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_780890-MLV109041447080_032026-F.webp"
+      },
+      {
+        "name": "Multicolor",
+        "hex": "#777777",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_780890-MLV109041447080_032026-F.webp"
+      }
+    ]
+  },
+  {
+    "id": "G-20",
+    "title": "Viseras Degradada Deportivas Cierre Mágico",
+    "priceDetal": 4,
+    "priceMayor": 2.8,
+    "category": "Viseras",
+    "colorCount": 1,
+    "url": "https://articulo.mercadolibre.com.ve/MLV-985816028-viseras-degradada-deportivas-cierre-magico-_JM?searchVariation=204940153945",
+    "colors": [
+      {
+        "name": "Multicolor",
+        "hex": "#777777",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_886894-MLV114252733779_072026-F.webp"
+      }
+    ]
+  },
+  {
+    "id": "G-21",
+    "title": "Gorras Planas Mett Unicolor De Malla",
+    "priceDetal": 5,
+    "priceMayor": 3.5,
+    "category": "Gorras",
+    "colorCount": 3,
+    "url": "https://articulo.mercadolibre.com.ve/MLV-998827148-gorras-planas-mett-unicolor-de-malla-_JM?searchVariation=192843768462",
+    "colors": [
+      {
+        "name": "Beige",
+        "hex": "#F5F3DC",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_980651-MLV110230766859_042026-F.webp"
+      },
+      {
+        "name": "Blanco",
+        "hex": "#FFFFFF",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_980651-MLV110230766859_042026-F.webp"
+      },
+      {
+        "name": "Multicolor",
+        "hex": "#777777",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_980651-MLV110230766859_042026-F.webp"
+      }
+    ]
+  },
+  {
+    "id": "G-22",
+    "title": "Gorras Unicolor Premium Camuflada Microperforada",
+    "priceDetal": 12,
+    "priceMayor": 8.4,
+    "category": "Gorras",
+    "colorCount": 3,
+    "url": "https://articulo.mercadolibre.com.ve/MLV-1011064896-gorras-unicolor-premium-camuflada-microperforada-_JM?searchVariation=202000923459",
+    "colors": [
+      {
+        "name": "Marrón",
+        "hex": "#A0522D",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_830039-MLV110739221006_052026-F.webp"
+      },
+      {
+        "name": "Rojo",
+        "hex": "#FF0000",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_830039-MLV110739221006_052026-F.webp"
+      },
+      {
+        "name": "Multicolor",
+        "hex": "#777777",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_830039-MLV110739221006_052026-F.webp"
+      }
+    ]
+  },
+  {
+    "id": "G-23",
+    "title": "Gorras Planas Mett Bicolor De Malla",
+    "priceDetal": 5,
+    "priceMayor": 3.5,
+    "category": "Gorras",
+    "colorCount": 3,
+    "url": "https://articulo.mercadolibre.com.ve/MLV-998840204-gorras-planas-mett-bicolor-de-malla-_JM?searchVariation=192844038326",
+    "colors": [
+      {
+        "name": "Blanco",
+        "hex": "#FFFFFF",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_618666-MLV110230503413_042026-F.webp"
+      },
+      {
+        "name": "Color",
+        "hex": "#000000",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_618666-MLV110230503413_042026-F.webp"
+      },
+      {
+        "name": "Multicolor",
+        "hex": "#777777",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_618666-MLV110230503413_042026-F.webp"
+      }
+    ]
+  },
+  {
+    "id": "G-24",
+    "title": "Gorras Unicolor Malla Acolchada Broche Plástico",
+    "priceDetal": 3,
+    "priceMayor": 2.1,
+    "category": "Gorras",
+    "colorCount": 3,
+    "url": "https://articulo.mercadolibre.com.ve/MLV-977168674-gorras-unicolor-malla-acolchada-broche-plastico-_JM?searchVariation=198884296929",
+    "colors": [
+      {
+        "name": "Marrón",
+        "hex": "#A0522D",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_753730-MLV108480126494_032026-F.webp"
+      },
+      {
+        "name": "Color",
+        "hex": "#000000",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_753730-MLV108480126494_032026-F.webp"
+      },
+      {
+        "name": "Multicolor",
+        "hex": "#777777",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_753730-MLV108480126494_032026-F.webp"
+      }
+    ]
+  },
+  {
+    "id": "G-25",
+    "title": "Gorras Bicolor Malla Modelo Ff Broche Plástico",
+    "priceDetal": 4,
+    "priceMayor": 2.8,
+    "category": "Gorras",
+    "colorCount": 3,
+    "url": "https://articulo.mercadolibre.com.ve/MLV-989361632-gorras-bicolor-malla-modelo-ff-broche-plastico-_JM?searchVariation=199443653451",
+    "colors": [
+      {
+        "name": "Naranja",
+        "hex": "#FF8C00",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_871966-MLV109926807603_042026-F.webp"
+      },
+      {
+        "name": "Rojo",
+        "hex": "#FF0000",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_871966-MLV109926807603_042026-F.webp"
+      },
+      {
+        "name": "Multicolor",
+        "hex": "#777777",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_871966-MLV109926807603_042026-F.webp"
+      }
+    ]
+  },
+  {
+    "id": "G-26",
+    "title": "Gorras Unicolor Prelavada Broche Caimán Metálico",
+    "priceDetal": 5,
+    "priceMayor": 3.5,
+    "category": "Gorras",
+    "colorCount": 3,
+    "url": "https://articulo.mercadolibre.com.ve/MLV-978181878-gorras-unicolor-prelavada-broche-caiman-metalico-_JM?searchVariation=199220568505",
+    "colors": [
+      {
+        "name": "Naranja",
+        "hex": "#FF8C00",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_939519-MLV108859867252_032026-F.webp"
+      },
+      {
+        "name": "Beige",
+        "hex": "#F5F3DC",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_939519-MLV108859867252_032026-F.webp"
+      },
+      {
+        "name": "Multicolor",
+        "hex": "#777777",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_939519-MLV108859867252_032026-F.webp"
+      }
+    ]
+  },
+  {
+    "id": "G-27",
+    "title": "Gorras Unicolor Vip De Malla Camuflada",
+    "priceDetal": 7,
+    "priceMayor": 4.9,
+    "category": "Gorras",
+    "colorCount": 4,
+    "url": "https://articulo.mercadolibre.com.ve/MLV-1009955942-gorras-unicolor-vip-de-malla-camuflada-_JM?searchVariation=194149765922",
+    "colors": [
+      {
+        "name": "Naranja",
+        "hex": "#FF8C00",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_728843-MLV110300516816_052026-F.webp"
+      },
+      {
+        "name": "Blanco",
+        "hex": "#FFFFFF",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_728843-MLV110300516816_052026-F.webp"
+      },
+      {
+        "name": "Color",
+        "hex": "#000000",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_728843-MLV110300516816_052026-F.webp"
+      },
+      {
+        "name": "Multicolor",
+        "hex": "#777777",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_728843-MLV110300516816_052026-F.webp"
+      }
+    ]
+  },
+  {
+    "id": "G-28",
+    "title": "Gorras Unicolor Vip Camuflada Completa",
+    "priceDetal": 7,
+    "priceMayor": 4.9,
+    "category": "Gorras",
+    "colorCount": 2,
+    "url": "https://articulo.mercadolibre.com.ve/MLV-1010487578-gorras-unicolor-vip-camuflada-completa-_JM?searchVariation=194408111966",
+    "colors": [
+      {
+        "name": "Color",
+        "hex": "#E1E1E1",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_699795-MLV111454975703_052026-F.webp"
+      },
+      {
+        "name": "Multicolor",
+        "hex": "#777777",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_699795-MLV111454975703_052026-F.webp"
+      }
+    ]
+  },
+  {
+    "id": "G-29",
+    "title": "Gorras Premium Camufladas Con Laureles Frontal Free",
+    "priceDetal": 12,
+    "priceMayor": 8.4,
+    "category": "Gorras",
+    "colorCount": 3,
+    "url": "https://articulo.mercadolibre.com.ve/MLV-777296111-gorras-premium-camufladas-con-laureles-frontal-free-_JM?searchVariation=196212064412",
+    "colors": [
+      {
+        "name": "Color",
+        "hex": "#000000",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_931766-MLV112993041407_062026-F.webp"
+      },
+      {
+        "name": "Verde oscuro",
+        "hex": "#003D00",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_931766-MLV112993041407_062026-F.webp"
+      },
+      {
+        "name": "Multicolor",
+        "hex": "#777777",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_931766-MLV112993041407_062026-F.webp"
+      }
+    ]
+  },
+  {
+    "id": "G-30",
+    "title": "Gorras Unicolor Planas Mett Completa Broche Plástico",
+    "priceDetal": 5,
+    "priceMayor": 3.5,
+    "category": "Gorras",
+    "colorCount": 3,
+    "url": "https://articulo.mercadolibre.com.ve/MLV-978246808-gorras-unicolor-planas-mett-completa-broche-plastico-_JM?searchVariation=199802204273",
+    "colors": [
+      {
+        "name": "Color",
+        "hex": "#E1E1E1",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_899082-MLV109278651498_042026-F.webp"
+      },
+      {
+        "name": "Blanco",
+        "hex": "#FFFFFF",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_899082-MLV109278651498_042026-F.webp"
+      },
+      {
+        "name": "Multicolor",
+        "hex": "#777777",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_899082-MLV109278651498_042026-F.webp"
+      }
+    ]
+  },
+  {
+    "id": "G-31",
+    "title": "Gorras Unicolor Flex Premium Completa",
+    "priceDetal": 12,
+    "priceMayor": 8.4,
+    "category": "Gorras",
+    "colorCount": 3,
+    "url": "https://articulo.mercadolibre.com.ve/MLV-1012460802-gorras-unicolor-flex-premium-completa-_JM?searchVariation=202512428619",
+    "colors": [
+      {
+        "name": "Blanco",
+        "hex": "#FFFFFF",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_698791-MLV112063041803_052026-F.webp"
+      },
+      {
+        "name": "Color",
+        "hex": "#000000",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_698791-MLV112063041803_052026-F.webp"
+      },
+      {
+        "name": "Multicolor",
+        "hex": "#777777",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_698791-MLV112063041803_052026-F.webp"
+      }
+    ]
+  },
+  {
+    "id": "G-32",
+    "title": "Gorras Unicolor Delax Vip Impermeables",
+    "priceDetal": 7,
+    "priceMayor": 4.9,
+    "category": "Gorras",
+    "colorCount": 3,
+    "url": "https://articulo.mercadolibre.com.ve/MLV-776104127-gorras-unicolor-delax-vip-impermeables-_JM?searchVariation=194145612812",
+    "colors": [
+      {
+        "name": "Marrón",
+        "hex": "#A0522D",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_758716-MLV111226564405_052026-F.webp"
+      },
+      {
+        "name": "Naranja",
+        "hex": "#FF8C00",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_758716-MLV111226564405_052026-F.webp"
+      },
+      {
+        "name": "Multicolor",
+        "hex": "#777777",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_758716-MLV111226564405_052026-F.webp"
+      }
+    ]
+  },
+  {
+    "id": "G-33",
+    "title": "Gorras Camuflada Regulada De Malla Completa",
+    "priceDetal": 3,
+    "priceMayor": 2.1,
+    "category": "Gorras",
+    "colorCount": 2,
+    "url": "https://articulo.mercadolibre.com.ve/MLV-988308614-gorras-camuflada-regulada-de-malla-completa-_JM?searchVariation=192337975760",
+    "colors": [
+      {
+        "name": "Marrón",
+        "hex": "#A0522D",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_956400-MLV109874972279_032026-F.webp"
+      },
+      {
+        "name": "Multicolor",
+        "hex": "#777777",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_956400-MLV109874972279_032026-F.webp"
+      }
+    ]
+  },
+  {
+    "id": "G-34",
+    "title": "Sombrero O Gorro De Pesca Solapa Ajustable",
+    "priceDetal": 15,
+    "priceMayor": 10.5,
+    "category": "Sombreros",
+    "colorCount": 3,
+    "url": "https://articulo.mercadolibre.com.ve/MLV-1020876072-sombrero-o-gorro-de-pesca-solapa-ajustable-_JM?searchVariation=197896034276",
+    "colors": [
+      {
+        "name": "Azul marino",
+        "hex": "#0F5299",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_911737-MLV114964226901_072026-F.webp"
+      },
+      {
+        "name": "Color",
+        "hex": "#E1E1E1",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_911737-MLV114964226901_072026-F.webp"
+      },
+      {
+        "name": "Multicolor",
+        "hex": "#777777",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_911737-MLV114964226901_072026-F.webp"
+      }
+    ]
+  },
+  {
+    "id": "G-35",
+    "title": "Gorras Unicolor Impermeable Ciclista",
+    "priceDetal": 5,
+    "priceMayor": 3.5,
+    "category": "Gorras",
+    "colorCount": 1,
+    "url": "https://articulo.mercadolibre.com.ve/MLV-978285780-gorras-unicolor-impermeable-ciclista-_JM?searchVariation=199430129197",
+    "colors": [
+      {
+        "name": "Multicolor",
+        "hex": "#777777",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_804384-MLV109926927853_042026-F.webp"
+      }
+    ]
+  },
+  {
+    "id": "G-36",
+    "title": "Sombrero O Gorro De Pesca Solapa Protección Solar Ajustable Negro 60cm Lona",
+    "priceDetal": 15,
+    "priceMayor": 10.5,
+    "category": "Sombreros",
+    "colorCount": 1,
+    "url": "https://articulo.mercadolibre.com.ve/MLV-778459389-sombrero-o-gorro-de-pesca-solapa-proteccion-solar-ajustable-negro-60cm-lona-_JM",
+    "colors": [
+      {
+        "name": "Negro",
+        "hex": "#111111",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_915853-MLV113676990324_072026-F.webp"
+      }
+    ]
+  },
+  {
+    "id": "G-37",
+    "title": "Gorras Unicolor Vip Frontal Free",
+    "priceDetal": 7,
+    "priceMayor": 4.9,
+    "category": "Gorras",
+    "colorCount": 3,
+    "url": "https://articulo.mercadolibre.com.ve/MLV-776248405-gorras-unicolor-vip-frontal-free-_JM?searchVariation=194490607982",
+    "colors": [
+      {
+        "name": "Verde",
+        "hex": "#0DA600",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_810687-MLV110592783884_052026-F.webp"
+      },
+      {
+        "name": "Azul marino",
+        "hex": "#0F5299",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_810687-MLV110592783884_052026-F.webp"
+      },
+      {
+        "name": "Color",
+        "hex": "#1717FF",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_810687-MLV110592783884_052026-F.webp"
+      }
+    ]
+  },
+  {
+    "id": "G-38",
+    "title": "Gorras Camuflada Regulada Planas",
+    "priceDetal": 3,
+    "priceMayor": 2.1,
+    "category": "Gorras",
+    "colorCount": 3,
+    "url": "https://articulo.mercadolibre.com.ve/MLV-988153130-gorras-camuflada-regulada-planas-_JM?searchVariation=192338496312",
+    "colors": [
+      {
+        "name": "Color",
+        "hex": "#E1E1E1",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_704469-MLV109871569257_032026-F.webp"
+      },
+      {
+        "name": "Beige",
+        "hex": "#F5F3DC",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_704469-MLV109871569257_032026-F.webp"
+      },
+      {
+        "name": "Marrón",
+        "hex": "#A0522D",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_704469-MLV109871569257_032026-F.webp"
+      }
+    ]
+  },
+  {
+    "id": "G-39",
+    "title": "Gorras Premium Unicolor Microperforada Completa",
+    "priceDetal": 12,
+    "priceMayor": 8.4,
+    "category": "Gorras",
+    "colorCount": 3,
+    "url": "https://articulo.mercadolibre.com.ve/MLV-1012185388-gorras-premium-unicolor-microperforada-completa-_JM?searchVariation=195129672348",
+    "colors": [
+      {
+        "name": "Rojo",
+        "hex": "#FF0000",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_770648-MLV111027015412_052026-F.webp"
+      },
+      {
+        "name": "Color",
+        "hex": "#1717FF",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_770648-MLV111027015412_052026-F.webp"
+      },
+      {
+        "name": "Blanco",
+        "hex": "#FFFFFF",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_770648-MLV111027015412_052026-F.webp"
+      }
+    ]
+  },
+  {
+    "id": "G-40",
+    "title": "Pack 36 Gorras Acrílicas Bordadas Personalizadas Unicolor Multicolor Un Drill",
+    "priceDetal": 180,
+    "priceMayor": 126,
+    "category": "Packs",
+    "colorCount": 1,
+    "url": "https://articulo.mercadolibre.com.ve/MLV-777261507-pack-36-gorras-acrilicas-bordadas-personalizadas-unicolor-multicolor-un-drill-_JM",
+    "colors": [
+      {
+        "name": "Estándar",
+        "hex": "#3a3a3a",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_896103-MLV112812832893_062026-F.webp"
+      }
+    ]
+  },
+  {
+    "id": "G-41",
+    "title": "Gorras Unicolor Premium Tres Paneles Microperforada",
+    "priceDetal": 12,
+    "priceMayor": 8.4,
+    "category": "Gorras",
+    "colorCount": 2,
+    "url": "https://articulo.mercadolibre.com.ve/MLV-776629603-gorras-unicolor-premium-tres-paneles-microperforada-_JM?searchVariation=195023863034",
+    "colors": [
+      {
+        "name": "Color",
+        "hex": "#000000",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_978254-MLV109673304366_042026-F.webp"
+      },
+      {
+        "name": "Blanco",
+        "hex": "#FFFFFF",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_978254-MLV109673304366_042026-F.webp"
+      }
+    ]
+  },
+  {
+    "id": "G-42",
+    "title": "Gorras Unicolor Acrílica Broche Plástico Snapback",
+    "priceDetal": 3,
+    "priceMayor": 2.1,
+    "category": "Gorras",
+    "colorCount": 3,
+    "url": "https://articulo.mercadolibre.com.ve/MLV-977622928-gorras-unicolor-acrilica-broche-plastico-snapback-_JM?searchVariation=191712243328",
+    "colors": [
+      {
+        "name": "Color",
+        "hex": "#000000",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_950446-MLV109041805053_032026-F.webp"
+      },
+      {
+        "name": "Blanco",
+        "hex": "#FFFFFF",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_950446-MLV109041805053_032026-F.webp"
+      },
+      {
+        "name": "Naranja",
+        "hex": "#FF8C00",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_950446-MLV109041805053_032026-F.webp"
+      }
+    ]
+  },
+  {
+    "id": "G-43",
+    "title": "Gorras Unicolor Malla Modelo Ff Frontal Free",
+    "priceDetal": 4,
+    "priceMayor": 2.8,
+    "category": "Gorras",
+    "colorCount": 3,
+    "url": "https://articulo.mercadolibre.com.ve/MLV-989415646-gorras-unicolor-malla-modelo-ff-frontal-free-_JM?searchVariation=192404365626",
+    "colors": [
+      {
+        "name": "Blanco",
+        "hex": "#FFFFFF",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_943772-MLV109929472087_042026-F.webp"
+      },
+      {
+        "name": "Azul marino",
+        "hex": "#0F5299",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_943772-MLV109929472087_042026-F.webp"
+      },
+      {
+        "name": "Multicolor",
+        "hex": "#777777",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_943772-MLV109929472087_042026-F.webp"
+      }
+    ]
+  },
+  {
+    "id": "G-44",
+    "title": "Gorras Bicolor Planas Mett Completa Broche Plástico",
+    "priceDetal": 5,
+    "priceMayor": 3.5,
+    "category": "Gorras",
+    "colorCount": 3,
+    "url": "https://articulo.mercadolibre.com.ve/MLV-995707628-gorras-bicolor-planas-mett-completa-broche-plastico-_JM?searchVariation=192722646674",
+    "colors": [
+      {
+        "name": "Color",
+        "hex": "#000000",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_765032-MLV109278555826_042026-F.webp"
+      },
+      {
+        "name": "Rojo",
+        "hex": "#FF0000",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_765032-MLV109278555826_042026-F.webp"
+      },
+      {
+        "name": "Multicolor",
+        "hex": "#777777",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_765032-MLV109278555826_042026-F.webp"
+      }
+    ]
+  },
+  {
+    "id": "G-45",
+    "title": "Gorras Unicolor Premium Microperforada Planas",
+    "priceDetal": 12,
+    "priceMayor": 8.4,
+    "category": "Gorras",
+    "colorCount": 4,
+    "url": "https://articulo.mercadolibre.com.ve/MLV-1012456532-gorras-unicolor-premium-microperforada-planas-_JM?searchVariation=202500448303",
+    "colors": [
+      {
+        "name": "Azul marino",
+        "hex": "#0F5299",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_617380-MLV111069367572_052026-F.webp"
+      },
+      {
+        "name": "Color",
+        "hex": "#000000",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_617380-MLV111069367572_052026-F.webp"
+      },
+      {
+        "name": "Rojo",
+        "hex": "#FF0000",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_617380-MLV111069367572_052026-F.webp"
+      },
+      {
+        "name": "Color",
+        "hex": "#1717FF",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_617380-MLV111069367572_052026-F.webp"
+      }
+    ]
+  },
+  {
+    "id": "G-46",
+    "title": "Gorras Unicolor Prelavada Para Niños Ajustable",
+    "priceDetal": 5,
+    "priceMayor": 3.5,
+    "category": "Gorras",
+    "colorCount": 3,
+    "url": "https://articulo.mercadolibre.com.ve/MLV-1013591596-gorras-unicolor-prelavada-para-ninos-ajustable-_JM?searchVariation=203173866771",
+    "colors": [
+      {
+        "name": "Rosa",
+        "hex": "#FCB1BE",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_678575-MLV111569901114_062026-F.webp"
+      },
+      {
+        "name": "Morado",
+        "hex": "#9F00FF",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_678575-MLV111569901114_062026-F.webp"
+      },
+      {
+        "name": "Multicolor",
+        "hex": "#777777",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_678575-MLV111569901114_062026-F.webp"
+      }
+    ]
+  },
+  {
+    "id": "G-47",
+    "title": "Gorras Bicolor Acrílica Frontal Free Sin Costura Al Frente",
+    "priceDetal": 4,
+    "priceMayor": 2.8,
+    "category": "Gorras",
+    "colorCount": 1,
+    "url": "https://articulo.mercadolibre.com.ve/MLV-1013172638-gorras-bicolor-acrilica-frontal-free-sin-costura-al-frente-_JM?searchVariation=202856501815",
+    "colors": [
+      {
+        "name": "Multicolor",
+        "hex": "#777777",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_727722-MLV112388843319_052026-F.webp"
+      }
+    ]
+  },
+  {
+    "id": "G-48",
+    "title": "Gorras Bicolor Vip De Malla Tela Especial",
+    "priceDetal": 3,
+    "priceMayor": 2.1,
+    "category": "Gorras",
+    "colorCount": 4,
+    "url": "https://articulo.mercadolibre.com.ve/MLV-1007601342-gorras-bicolor-vip-de-malla-tela-especial-_JM?searchVariation=200570497815",
+    "colors": [
+      {
+        "name": "Naranja",
+        "hex": "#FF8C00",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_743795-MLV119027710738_112026-F.webp"
+      },
+      {
+        "name": "Verde",
+        "hex": "#0DA600",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_743795-MLV119027710738_112026-F.webp"
+      },
+      {
+        "name": "Color",
+        "hex": "#1717FF",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_743795-MLV119027710738_112026-F.webp"
+      },
+      {
+        "name": "Multicolor",
+        "hex": "#777777",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_743795-MLV119027710738_112026-F.webp"
+      }
+    ]
+  }
+];
+
+      let currentPage = 1;
+      const itemsPerPage = 20;
+      let filteredProducts = [...productsData];
+
+      document.addEventListener("DOMContentLoaded", () => {
+        buildHeroMosaic();
+        renderProducts();
+        setupEventListeners();
+        setupParallax();
+      });
+
+      function buildHeroMosaic() {
+        const mosaic = document.getElementById("heroMosaic");
+        if (!mosaic) return;
+
+        const seen = new Set();
+        const urls = [];
+        productsData.forEach((product) => {
+          const first = product.colors && product.colors[0];
+          if (first && first.image && !seen.has(first.image)) {
+            seen.add(first.image);
+            urls.push(first.image.replace(/-F\.webp$/, "-V.webp"));
+          }
+        });
+
+        mosaic.innerHTML = urls
+          .map(
+            (url) =>
+              `<img src="${url}" alt="Modelo de gorra A1 gorras 2005" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src=this.src.replace('-V.webp','-F.webp')">`,
+          )
+          .join("");
+      }
+
+      function setupParallax() {
+        const heroMosaic = document.getElementById("heroMosaic");
+        window.addEventListener("scroll", () => {
+          const scrolled = window.pageYOffset;
+          const navbar = document.getElementById("navbar");
+
+          if (heroMosaic && scrolled < window.innerHeight) {
+            heroMosaic.style.transform = `translate3d(0, ${scrolled * 0.35}px, 0)`;
+          }
+
+          if (scrolled > 50) {
+            navbar.classList.add("scrolled");
+          } else {
+            navbar.classList.remove("scrolled");
+          }
+        });
+      }
+
+      function renderProducts() {
+        const grid = document.getElementById("productsGrid");
+        grid.innerHTML = "";
+
+        const start = (currentPage - 1) * itemsPerPage;
+        const end = start + itemsPerPage;
+        const paginatedItems = filteredProducts.slice(start, end);
+
+        if (paginatedItems.length === 0) {
+          grid.innerHTML = `<div style="grid-column: 1/-1; text-align: center; padding: 3rem; color: var(--text-muted);">No se encontraron productos.</div>`;
+          return;
+        }
+
+        paginatedItems.forEach((product) => {
+          const card = document.createElement("div");
+          card.className = "card-container";
+          card.id = `card-${product.id}`;
+
+          const defaultColor = product.colors[0];
+
+          card.innerHTML = `
+                    <div class="card-inner">
+                        <div class="card-front glass-panel">
+                            <div class="product-image-box">
+                                <span class="badge-tag">${product.category}</span>
+                                <img src="${defaultColor.image}" id="img-${product.id}" alt="${product.title}" referrerpolicy="no-referrer" loading="lazy" decoding="async">
+                            </div>
+                            <div class="product-details">
+                                <div>
+                                    <h3 class="product-title" title="${product.title}">${product.title}</h3>
+                                    <div class="color-dropdown" id="cdrop-${product.id}">
+                                        <button type="button" class="color-dropdown-toggle" onclick="toggleColorMenu('${product.id}', event)">
+                                            <span class="color-swatch color-swatch--sm" id="swatch-${product.id}" style="background-color:${defaultColor.hex}"></span>
+                                            <span class="color-dropdown-label" id="clabel-${product.id}">${defaultColor.name}</span>
+                                            <i class="fa-solid fa-chevron-down color-dropdown-caret"></i>
+                                        </button>
+                                        <div class="color-dropdown-menu" id="cmenu-${product.id}">
+                                            ${product.colors
+                                              .map(
+                                                (c, idx) => `
+                                                <div class="color-option ${idx === 0 ? "active" : ""}" data-image="${c.image}" data-hex="${c.hex}" data-name="${c.name}" onclick="changeProductColor('${product.id}', this)">
+                                                    <span class="color-swatch color-swatch--sm" style="background-color:${c.hex}"></span>
+                                                    <span class="color-option-name">${c.name}</span>
+                                                    <i class="fa-solid fa-check color-option-check"></i>
+                                                </div>`,
+                                              )
+                                              .join("")}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div class="price-row">
+                                        <div class="price-box">
+                                            <span class="price-value" id="price-${product.id}">$${product.priceDetal.toFixed(2)}</span>
+                                            <span class="price-type" id="type-${product.id}">Detal</span>
+                                        </div>
+                                        <div class="qty-picker">
+                                            <button class="qty-btn" onclick="stepQty('${product.id}', -1, ${product.priceDetal}, ${product.priceMayor})">-</button>
+                                            <input type="number" class="qty-input" id="qty-${product.id}" value="1" min="1" oninput="recalcPrice('${product.id}', ${product.priceDetal}, ${product.priceMayor})">
+                                            <button class="qty-btn" onclick="stepQty('${product.id}', 1, ${product.priceDetal}, ${product.priceMayor})">+</button>
+                                        </div>
+                                    </div>
+                                    <button class="btn-flip" onclick="toggleFlip('${product.id}')">
+                                        <i class="fa-solid fa-sliders"></i> Personalizar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-back glass-panel">
+                            <div>
+                                <h4 class="form-title">Configurar Pedido</h4>
+                                <form class="custom-form" id="form-${product.id}" onsubmit="sendWhatsAppOrder(event, '${product.id}')">
+                                    <div class="form-group">
+                                        <label>Tipo de Trabajo</label>
+                                        <select class="form-control" id="customType-${product.id}">
+                                            <option value="Bordado 3D Relieve">Bordado 3D Relieve</option>
+                                            <option value="Bordado Plano">Bordado Plano Tradicional</option>
+                                            <option value="Sublimación Digital">Sublimación Digital</option>
+                                            <option value="Parche de Cuero">Parche de Cuero Grabado</option>
+                                            <option value="Gorra Lisa">Gorra Lisa (Sin Personalizar)</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Ubicación</label>
+                                        <select class="form-control" id="customPos-${product.id}">
+                                            <option value="Frente Central">Frente Central</option>
+                                            <option value="Lado Izquierdo">Lado Izquierdo</option>
+                                            <option value="Lado Derecho">Lado Derecho</option>
+                                            <option value="Atras (Cierre)">Atras (Sobre Cierre)</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Texto / Arte</label>
+                                        <input type="text" class="form-control" id="customText-${product.id}" placeholder="Ej. Mi Logo / Iniciales">
+                                    </div>
+                                    
+                                    <button type="submit" class="btn-ws-send">
+                                        <i class="fa-brands fa-whatsapp"></i> Pedir WhatsApp
+                                    </button>
+                                </form>
+                            </div>
+                            <button class="btn-cancel" onclick="toggleFlip('${product.id}')">
+                                <i class="fa-solid fa-arrow-left"></i> Volver al producto
+                            </button>
+                        </div>
+                    </div>
+                `;
+          grid.appendChild(card);
+        });
+
+        renderPagination();
+      }
+
+      function closeColorMenus() {
+        document.querySelectorAll(".color-dropdown-menu.open").forEach((menu) => {
+          menu.classList.remove("open");
+          if (menu.parentElement) menu.parentElement.classList.remove("open");
+          const card = menu.closest(".card-container");
+          if (card) card.style.zIndex = "";
+        });
+      }
+
+      function handleGlobalClick(event) {
+        if (event.target.closest && event.target.closest(".color-dropdown-menu")) {
+          return;
+        }
+        closeColorMenus();
+      }
+
+      function handleGlobalScroll(event) {
+        if (event.target.closest && event.target.closest(".color-dropdown-menu")) {
+          return;
+        }
+        closeColorMenus();
+      }
+
+      function toggleColorMenu(productId, event) {
+        event.stopPropagation();
+        const dropdown = document.getElementById(`cdrop-${productId}`);
+        const menu = document.getElementById(`cmenu-${productId}`);
+        const wasOpen = menu.classList.contains("open");
+        closeColorMenus();
+        if (wasOpen) return;
+
+        menu.classList.add("open");
+        dropdown.classList.add("open");
+        const card = dropdown.closest(".card-container");
+        if (card) card.style.zIndex = "30";
+      }
+
+      function changeProductColor(productId, optionElement) {
+        const img = document.getElementById(`img-${productId}`);
+        if (img) img.src = optionElement.dataset.image;
+
+        const swatch = document.getElementById(`swatch-${productId}`);
+        if (swatch) swatch.style.backgroundColor = optionElement.dataset.hex;
+
+        const label = document.getElementById(`clabel-${productId}`);
+        if (label) label.textContent = optionElement.dataset.name;
+
+        const menu = document.getElementById(`cmenu-${productId}`);
+        if (menu) {
+          menu
+            .querySelectorAll(".color-option")
+            .forEach((option) => option.classList.remove("active"));
+          optionElement.classList.add("active");
+        }
+        closeColorMenus();
+      }
+
+      function stepQty(productId, change, priceDetal, priceMayor) {
+        const input = document.getElementById(`qty-${productId}`);
+        let val = parseInt(input.value) || 1;
+        val += change;
+        if (val < 1) val = 1;
+        input.value = val;
+        recalcPrice(productId, priceDetal, priceMayor);
+      }
+
+      function recalcPrice(productId, priceDetal, priceMayor) {
+        const input = document.getElementById(`qty-${productId}`);
+        const priceElement = document.getElementById(`price-${productId}`);
+        const typeElement = document.getElementById(`type-${productId}`);
+
+        let qty = parseInt(input.value);
+        if (isNaN(qty) || qty < 1) qty = 1;
+
+        const isMayor = qty >= 12;
+        const unitPrice = isMayor ? priceMayor : priceDetal;
+        const totalPrice = unitPrice * qty;
+
+        priceElement.innerText = `$${totalPrice.toFixed(2)}`;
+        typeElement.innerText = isMayor
+          ? `Al Mayor ($${priceMayor}/u)`
+          : `Detal ($${priceDetal}/u)`;
+      }
+
+      function toggleFlip(productId) {
+        const card = document.getElementById(`card-${productId}`);
+        if (card) card.classList.toggle("flipped");
+      }
+
+      function sendWhatsAppOrder(event, productId) {
+        event.preventDefault();
+
+        const product = productsData.find((p) => p.id === productId);
+        const qtyInput = document.getElementById(`qty-${productId}`);
+        const qty = qtyInput ? qtyInput.value : "1";
+        const customType = document.getElementById(
+          `customType-${productId}`,
+        ).value;
+        const customPos = document.getElementById(
+          `customPos-${productId}`,
+        ).value;
+        const customText =
+          document.getElementById(`customText-${productId}`).value ||
+          "Sin texto especificado";
+
+        const message =
+          `*NUEVO PEDIDO DE GORRAS - A1 GORRAS 2005 C.A*%0A%0A` +
+          `*Producto:* ${product.title}%0A` +
+          `*Cantidad:* ${qty} unidades%0A` +
+          `*Tipo de Trabajo:* ${customType}%0A` +
+          `*Ubicación:* ${customPos}%0A` +
+          `*Texto/Arte:* ${customText}%0A%0A` +
+          `*Solicitud enviada desde el catálogo web.*`;
+
+        window.open(`https://wa.me/584120000000?text=${message}`, "_blank");
+
+        // Limpiar datos del formulario y carrito/selección de la tarjeta al enviar
+        event.target.reset();
+        if (qtyInput) qtyInput.value = "1";
+        recalcPrice(productId, product.priceDetal, product.priceMayor);
+        toggleFlip(productId);
+      }
+
+      function renderPagination() {
+        const container = document.getElementById("pagination");
+        container.innerHTML = "";
+
+        const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
+        if (totalPages <= 1) return;
+
+        for (let i = 1; i <= totalPages; i++) {
+          const btn = document.createElement("button");
+          btn.className = `page-btn ${i === currentPage ? "active" : ""}`;
+          btn.innerText = i;
+          btn.onclick = () => {
+            currentPage = i;
+            renderProducts();
+            window.scrollTo({
+              top: document.querySelector(".products-section").offsetTop - 100,
+              behavior: "smooth",
+            });
+          };
+          container.appendChild(btn);
+        }
+      }
+
+      function setupEventListeners() {
+        document.addEventListener("click", handleGlobalClick);
+        window.addEventListener("scroll", handleGlobalScroll, true);
+        window.addEventListener("resize", closeColorMenus);
+
+        const searchInput = document.getElementById("searchInput");
+        searchInput.addEventListener("input", (e) => {
+          const query = e.target.value.toLowerCase().trim();
+          filteredProducts = productsData.filter(
+            (p) =>
+              p.title.toLowerCase().includes(query) ||
+              p.category.toLowerCase().includes(query),
+          );
+          currentPage = 1;
+          renderProducts();
+        });
+
+        const modal = document.getElementById("reviewModal");
+        document.getElementById("openReviewModal").onclick = () =>
+          (modal.style.display = "flex");
+        document.getElementById("closeReviewModal").onclick = () =>
+          (modal.style.display = "none");
+
+        document.getElementById("reviewForm").onsubmit = (e) => {
+          e.preventDefault();
+          const name = document.getElementById("revName").value;
+          const comment = document.getElementById("revComment").value;
+
+          const grid = document.getElementById("reviewsGrid");
+          const newRev = document.createElement("div");
+          newRev.className = "review-item";
+          newRev.innerHTML = `
+                    <div class="review-user">
+                        <div class="user-avatar">${name.substring(0, 2).toUpperCase()}</div>
+                        <div class="user-meta">
+                            <h4>${name}</h4>
+                            <span>Hace un momento</span>
+                        </div>
+                    </div>
+                    <p class="review-text">${comment}</p>
+                `;
+          grid.prepend(newRev);
+
+          modal.style.display = "none";
+          e.target.reset();
+          alert("¡Gracias por tu reseña!");
+        };
+      }
+    </script>
+  </body>
+</html>
