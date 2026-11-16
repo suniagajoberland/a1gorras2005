@@ -5,6 +5,13 @@ body {
     overflow-x: hidden;
 }
 
+/* overflow-x: clip evita el scroll horizontal sin romper position: sticky */
+@supports (overflow-x: clip) {
+    body {
+        overflow-x: clip;
+    }
+}
+
 .perspective-1000 {
     perspective: 1200px;
 }
@@ -86,3 +93,155 @@ body {
 .swatch-scroll::-webkit-scrollbar {
     width: 6px;
 }
+
+/* ==========================================================
+   MOBILE: 2 tarjetas por fila y tarjetas compactas
+   ========================================================== */
+@media (max-width: 767px) {
+    .brand-name {
+        font-size: 0.8rem !important;
+        letter-spacing: 0.02em !important;
+    }
+
+    #products-grid {
+        gap: 0.6rem !important;
+    }
+
+    #products-grid > .flip-card {
+        min-height: 0 !important;
+    }
+
+    #products-grid .product-card-front,
+    #products-grid .product-card-back {
+        padding: 0.6rem !important;
+    }
+
+    #products-grid .product-badge {
+        font-size: 0.55rem !important;
+        padding: 0.15rem 0.35rem !important;
+        letter-spacing: 0.02em !important;
+    }
+
+    #products-grid .product-card-front > div:first-child button {
+        padding: 0.3rem 0.4rem !important;
+    }
+
+    #products-grid .customize-label {
+        display: none !important;
+    }
+
+    #products-grid .product-title {
+        font-size: 0.7rem !important;
+        line-height: 1.15 !important;
+        margin-bottom: 0.4rem !important;
+    }
+
+    #products-grid .color-label {
+        font-size: 0.58rem !important;
+        padding: 0.05rem 0.4rem !important;
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    #products-grid .swatch-head {
+        font-size: 0.55rem !important;
+    }
+
+    #products-grid .swatch-count {
+        display: none !important;
+    }
+
+    #products-grid .swatches {
+        gap: 0.25rem !important;
+        max-height: 4.5rem !important;
+    }
+
+    #products-grid .swatches button {
+        width: 1.05rem !important;
+        height: 1.05rem !important;
+        border-width: 1px !important;
+    }
+
+    #products-grid .price-grid {
+        grid-template-columns: 1fr !important;
+        gap: 0.25rem !important;
+        padding: 0.3rem !important;
+    }
+
+    #products-grid .price-item {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        gap: 0.3rem !important;
+        padding: 0.25rem 0.4rem !important;
+    }
+
+    #products-grid .price-item > div:first-child {
+        font-size: 0.56rem !important;
+        margin: 0 !important;
+        text-align: left !important;
+    }
+
+    #products-grid .price-item > div:nth-child(2) {
+        font-size: 0.8rem !important;
+        margin: 0 !important;
+    }
+
+    #products-grid .price-item > div:last-child {
+        display: none !important;
+    }
+
+    #products-grid .price-note {
+        display: none !important;
+    }
+
+    #products-grid .card-actions {
+        flex-wrap: wrap !important;
+        gap: 0.35rem !important;
+    }
+
+    #products-grid .qty-control {
+        order: 1;
+        flex: 1 1 auto !important;
+        height: 2.2rem !important;
+        justify-content: space-between !important;
+        padding: 0 0.15rem !important;
+    }
+
+    #products-grid .qty-control button {
+        width: 1.3rem !important;
+    }
+
+    #products-grid .qty-control input {
+        width: 1.6rem !important;
+    }
+
+    #products-grid .wa-btn {
+        order: 2;
+        width: 2.3rem !important;
+        height: 2.2rem !important;
+        padding: 0 !important;
+    }
+
+    #products-grid .add-btn {
+        order: 3;
+        flex: 1 1 100% !important;
+        height: 2.2rem !important;
+        font-size: 0.68rem !important;
+        padding: 0 !important;
+    }
+
+    #products-grid .product-card-back .font-display {
+        font-size: 0.75rem !important;
+    }
+
+    #products-grid .product-card-back label,
+    #products-grid .product-card-back p,
+    #products-grid .product-card-back select,
+    #products-grid .product-card-back input {
+        font-size: 0.65rem !important;
+    }
+}
+

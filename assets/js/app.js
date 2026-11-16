@@ -194,14 +194,14 @@ let currentPage = 1;
                     <div class="flip-card-inner">
 
                         <!-- FRONT -->
-                        <div class="flip-card-front bg-[#2A1E4D]/75 border acc-card-front p-5 flex flex-col justify-between transition-colors">
+                        <div class="flip-card-front product-card-front bg-[#2A1E4D]/75 border acc-card-front p-5 flex flex-col justify-between transition-colors">
                             <div class="flex items-center justify-between gap-2">
-                                <span class="px-2.5 py-1 rounded-lg border acc-badge text-[11px] font-bold uppercase tracking-wider">
+                                <span class="product-badge px-2.5 py-1 rounded-lg border acc-badge text-[11px] font-bold uppercase tracking-wider">
                                     ${escapeHtml(product.category)}
                                 </span>
                                 <button onclick="toggleCardFlip('${product.id}')" class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#C9C2E3] hover:text-white bg-[#0E0B1D]/70 hover:bg-[#5A3B8C] border border-[#3A3A52] px-3 py-1.5 rounded-xl transition">
                                     <i class="fa-solid fa-sliders"></i>
-                                    <span>Personalizar</span>
+                                    <span class="customize-label">Personalizar</span>
                                 </button>
                             </div>
 
@@ -212,51 +212,51 @@ let currentPage = 1;
                                          onerror="this.onerror=null;this.src='https://placehold.co/400x400/2A1E4D/C9C2E3?text=A1+GORRAS'"
                                          class="w-full h-full object-cover transition-transform duration-300 hover:scale-105">
                                 </div>
-                                <span id="color-label-${product.id}" class="mt-2 text-xs font-medium text-[#C9C2E3] bg-[#0E0B1D]/80 px-3 py-0.5 rounded-full border border-[#3A3A52]">
+                                <span id="color-label-${product.id}" class="color-label mt-2 text-xs font-medium text-[#C9C2E3] bg-[#0E0B1D]/80 px-3 py-0.5 rounded-full border border-[#3A3A52]">
                                     Color: <strong class="text-white">${escapeHtml(activeColor.name)}</strong>
                                 </span>
                             </div>
 
                             <div class="mb-3">
                                 <div class="flex items-center justify-between mb-1.5">
-                                    <span class="text-[11px] uppercase tracking-wider text-[#C9C2E3]/80 font-semibold">Elige un color:</span>
-                                    <span class="text-[11px] text-[#8B7CC7]">${product.colors.length} tonos</span>
+                                    <span class="swatch-head text-[11px] uppercase tracking-wider text-[#C9C2E3]/80 font-semibold">Elige un color:</span>
+                                    <span class="swatch-count text-[11px] text-[#8B7CC7]">${product.colors.length} tonos</span>
                                 </div>
-                                <div class="flex items-center gap-2 flex-wrap max-h-24 overflow-y-auto swatch-scroll pr-1">
+                                <div class="swatches flex items-center gap-2 flex-wrap max-h-24 overflow-y-auto swatch-scroll pr-1">
                                     ${swatches}
                                 </div>
                             </div>
 
-                            <h3 class="font-display text-base font-bold text-white uppercase tracking-wide mb-2 line-clamp-2" title="${escapeAttr(product.name)}">
+                            <h3 class="product-title font-display text-base font-bold text-white uppercase tracking-wide mb-2 line-clamp-2" title="${escapeAttr(product.name)}">
                                 ${escapeHtml(product.name)}
                             </h3>
 
                             <div class="mb-3">
-                                <div class="grid grid-cols-3 gap-1.5 bg-[#0E0B1D]/90 border border-[#3A3A52] rounded-xl p-2 text-center">
-                                    <div class="p-1.5 rounded-lg bg-[#2A1E4D]/50">
+                                <div class="price-grid grid grid-cols-3 gap-1.5 bg-[#0E0B1D]/90 border border-[#3A3A52] rounded-xl p-2 text-center">
+                                    <div class="price-item p-1.5 rounded-lg bg-[#2A1E4D]/50">
                                         <div class="text-[10px] text-[#C9C2E3]/80 font-semibold uppercase">Detal (1-5)</div>
                                         <div class="text-sm sm:text-base font-extrabold text-white mt-0.5">${formatUSD(product.prices.detal)}</div>
                                         <div class="text-[9px] text-[#C9C2E3]/70">a tasa BCV</div>
                                     </div>
-                                    <div class="p-1.5 rounded-lg bg-[#5A3B8C]/35 border border-[#5A3B8C]">
+                                    <div class="price-item p-1.5 rounded-lg bg-[#5A3B8C]/35 border border-[#5A3B8C]">
                                         <div class="text-[10px] text-[#C9C2E3] font-bold uppercase">Mayor (6+)</div>
                                         <div class="text-sm sm:text-base font-extrabold text-[#C9C2E3] mt-0.5">${formatUSD(product.prices.mayor)}</div>
                                         <div class="text-[9px] text-[#8B7CC7]">a tasa BCV</div>
                                     </div>
-                                    <div class="p-1.5 rounded-lg bg-[#8B7CC7]/20 border border-[#8B7CC7]/60">
+                                    <div class="price-item p-1.5 rounded-lg bg-[#8B7CC7]/20 border border-[#8B7CC7]/60">
                                         <div class="text-[10px] text-[#8B7CC7] font-bold uppercase">G.Mayor (12+)</div>
                                         <div class="text-sm sm:text-base font-extrabold text-white mt-0.5">${formatUSD(product.prices.granMayor)}</div>
                                         <div class="text-[9px] text-[#C9C2E3]">a tasa BCV</div>
                                     </div>
                                 </div>
-                                <p class="text-[10px] text-center text-[#C9C2E3]/85 mt-1.5">
+                                <p class="price-note text-[10px] text-center text-[#C9C2E3]/85 mt-1.5">
                                     <i class="fa-solid fa-circle-info text-[#8B7CC7] mr-1"></i>Montos en Dólares ($) a la tasa BCV del día de pago
                                 </p>
                             </div>
 
                             <div class="space-y-2">
-                                <div class="flex items-center gap-2">
-                                    <div class="inline-flex items-center bg-[#0E0B1D] border border-[#3A3A52] rounded-xl h-10 px-1 shrink-0">
+                                <div class="card-actions flex items-center gap-2">
+                                    <div class="qty-control inline-flex items-center bg-[#0E0B1D] border border-[#3A3A52] rounded-xl h-10 px-1 shrink-0">
                                         <button type="button" onclick="changeCardQty('${product.id}', -1)" class="w-7 h-8 flex items-center justify-center text-[#C9C2E3] hover:text-white font-bold">-</button>
                                         <input type="number" id="qty-input-${product.id}" min="1" value="${qtyVal}" onchange="setCardQty('${product.id}', this.value)"
                                                aria-label="Cantidad"
@@ -264,14 +264,14 @@ let currentPage = 1;
                                         <button type="button" onclick="changeCardQty('${product.id}', 1)" class="w-7 h-8 flex items-center justify-center text-[#C9C2E3] hover:text-white font-bold">+</button>
                                     </div>
 
-                                    <button onclick="addToCart('${product.id}')" class="flex-1 h-10 acc-btn font-bold px-3 rounded-xl text-xs sm:text-sm flex items-center justify-center gap-1.5 shadow-md">
+                                    <button onclick="addToCart('${product.id}')" class="add-btn flex-1 h-10 acc-btn font-bold px-3 rounded-xl text-xs sm:text-sm flex items-center justify-center gap-1.5 shadow-md">
                                         <i class="fa-solid fa-cart-plus"></i>
                                         <span>Agregar</span>
                                     </button>
 
                                     <a id="wa-btn-${product.id}" href="${buildDirectProductWALink(product, activeColor, qtyVal)}" target="_blank" rel="noopener noreferrer"
                                        title="Consultar este modelo por WhatsApp"
-                                       class="h-10 bg-[#25D366] hover:bg-[#128C7E] text-[#0E0B1D] font-bold px-3 rounded-xl text-xs sm:text-sm transition flex items-center justify-center gap-1.5 shadow-md shrink-0">
+                                       class="wa-btn h-10 bg-[#25D366] hover:bg-[#128C7E] text-[#0E0B1D] font-bold px-3 rounded-xl text-xs sm:text-sm transition flex items-center justify-center gap-1.5 shadow-md shrink-0">
                                         <i class="fa-brands fa-whatsapp text-base"></i>
                                         <span class="hidden sm:inline">WhatsApp</span>
                                     </a>
@@ -280,7 +280,7 @@ let currentPage = 1;
                         </div>
 
                         <!-- BACK: PERSONALIZATION FORM -->
-                        <div class="flip-card-back bg-[#2A1E4D] border acc-card-back p-5 flex flex-col justify-between overflow-y-auto">
+                        <div class="flip-card-back product-card-back bg-[#2A1E4D] border acc-card-back p-5 flex flex-col justify-between overflow-y-auto">
                             <div>
                                 <div class="flex items-center justify-between border-b border-[#3A3A52] pb-3 mb-3">
                                     <div class="min-w-0">
@@ -640,6 +640,8 @@ let currentPage = 1;
             const totalUnits = cart.reduce((sum, item) => sum + item.qty, 0);
             const badge = document.getElementById('cart-badge');
             if (badge) badge.textContent = totalUnits;
+            const mobileBadge = document.getElementById('mobile-cart-badge');
+            if (mobileBadge) mobileBadge.textContent = totalUnits;
 
             const tier = getCartTier(totalUnits);
             const tierBanner = document.getElementById('cart-tier-banner');

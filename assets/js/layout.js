@@ -19,6 +19,15 @@
         return '<a href="' + n.href + '" class="' + cls + '"' + aria + '>' + n.label + '</a>';
     }).join('');
 
+    var mobileNavLinks = NAV.map(function (n) {
+        var active = n.id === page;
+        var cls = active
+            ? 'flex items-center justify-between px-4 py-3 rounded-xl bg-[#5A3B8C] text-white font-bold'
+            : 'flex items-center justify-between px-4 py-3 rounded-xl text-[#C9C2E3] hover:bg-[#2A1E4D] font-semibold transition';
+        var icon = active ? '<i class="fa-solid fa-chevron-right text-xs"></i>' : '<i class="fa-solid fa-chevron-right text-xs opacity-30"></i>';
+        return '<a href="' + n.href + '" onclick="toggleMobileMenu(false)" class="' + cls + '"><span>' + n.label + '</span>' + icon + '</a>';
+    }).join('');
+
     var headerHtml =
         '<!-- TOP INFO BAR -->' +
         '<div class="bg-[#2A1E4D]/90 border-b border-[#3A3A52] text-xs sm:text-sm py-2 px-3 sm:px-6">' +
@@ -40,7 +49,7 @@
         '      <div class="w-8 h-8 rounded-xl bg-gradient-to-br from-[#5A3B8C] to-[#8B7CC7] flex items-center justify-center text-[#0E0B1D] font-bold shadow-lg shadow-[#5A3B8C]/40">' +
         '        <i class="fa-solid fa-hat-cowboy-side text-base"></i>' +
         '      </div>' +
-        '      <span class="font-display text-base sm:text-lg font-bold tracking-wider text-white whitespace-nowrap">A1 GORRAS <span class="text-[#8B7CC7]">2005 C.A</span></span>' +
+        '      <span class="brand-name font-display text-base sm:text-lg font-bold tracking-wider text-white whitespace-nowrap">A1 GORRAS <span class="text-[#8B7CC7]">2005 C.A</span></span>' +
         '    </a>' +
         '    <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-[#C9C2E3]" aria-label="Navegación principal">' + navLinks + '</nav>' +
         '    <div class="flex items-center gap-2 sm:gap-3">' +
@@ -51,9 +60,44 @@
         '        <i class="fa-solid fa-bag-shopping"></i><span class="hidden sm:inline">Carrito</span>' +
         '        <span id="cart-badge" class="bg-[#0E0B1D] text-[#C9C2E3] text-xs font-extrabold px-2 py-0.5 rounded-full border border-[#8B7CC7]/40">0</span>' +
         '      </button>' +
+        '      <button onclick="toggleMobileMenu(true)" class="md:hidden w-9 h-9 inline-flex items-center justify-center rounded-xl bg-[#2A1E4D] hover:bg-[#3A3A52] text-[#C9C2E3] border border-[#5A3B8C] transition" aria-label="Abrir menú" aria-controls="mobile-menu" aria-expanded="false"><i class="fa-solid fa-bars text-base"></i></button>' +
         '    </div>' +
         '  </div>' +
         '</header>';
+
+    var mobileMenuHtml =
+        '<!-- MOBILE MENU -->' +
+        '<div id="mobile-menu" class="fixed inset-0 z-50 hidden md:hidden" role="dialog" aria-modal="true" aria-label="Menú de navegación">' +
+        '  <div onclick="toggleMobileMenu(false)" class="absolute inset-0 bg-[#0E0B1D]/85 backdrop-blur-sm"></div>' +
+        '  <div id="mobile-menu-panel" class="absolute inset-y-0 left-0 w-[84%] max-w-[330px] bg-[#0E0B1D] border-r border-[#3A3A52] shadow-2xl flex flex-col" style="transform:translateX(-100%);transition:transform .3s ease;">' +
+        '    <div class="h-16 px-4 flex items-center justify-between border-b border-[#3A3A52] bg-[#2A1E4D]/60 shrink-0">' +
+        '      <a href="index.html" class="flex items-center gap-2" aria-label="A1 GORRAS 2005 C.A - Inicio">' +
+        '        <div class="w-8 h-8 rounded-xl bg-gradient-to-br from-[#5A3B8C] to-[#8B7CC7] flex items-center justify-center text-[#0E0B1D] font-bold shadow-lg"><i class="fa-solid fa-hat-cowboy-side text-base"></i></div>' +
+        '        <span class="font-display text-sm font-bold tracking-wider text-white whitespace-nowrap">A1 GORRAS <span class="text-[#8B7CC7]">2005 C.A</span></span>' +
+        '      </a>' +
+        '      <button onclick="toggleMobileMenu(false)" aria-label="Cerrar menú" class="w-9 h-9 rounded-xl bg-[#0E0B1D]/70 hover:bg-[#3A3A52] text-[#C9C2E3] hover:text-white flex items-center justify-center transition border border-[#3A3A52]"><i class="fa-solid fa-xmark text-lg"></i></button>' +
+        '    </div>' +
+        '    <nav class="flex-1 overflow-y-auto p-4 space-y-1.5" aria-label="Navegación móvil">' + mobileNavLinks + '</nav>' +
+        '    <div class="p-4 border-t border-[#3A3A52] space-y-3 shrink-0">' +
+        '      <button onclick="toggleMobileMenu(false); toggleCart(true)" class="w-full flex items-center justify-between gap-2 bg-[#5A3B8C] hover:bg-[#8B7CC7] text-white font-bold px-4 py-3 rounded-xl text-sm transition">' +
+        '        <span class="flex items-center gap-2"><i class="fa-solid fa-bag-shopping"></i> Mi Carrito</span>' +
+        '        <span id="mobile-cart-badge" class="bg-[#0E0B1D] text-[#C9C2E3] text-xs font-extrabold px-2 py-0.5 rounded-full border border-[#8B7CC7]/40">0</span>' +
+        '      </button>' +
+        '      <a href="https://wa.me/584226382165?text=Hola%20A1%20GORRAS%202005%20C.A,%20quisiera%20informaci%C3%B3n%20sobre%20sus%20gorras." target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#128C7E] text-[#0E0B1D] font-bold px-4 py-3 rounded-xl text-sm transition"><i class="fa-brands fa-whatsapp text-lg"></i> Asesoría por WhatsApp</a>' +
+        '      <div class="flex items-center justify-center gap-5 pt-1 text-lg text-[#C9C2E3]">' +
+        '        <a href="https://www.instagram.com/gorrasaunoca/" target="_blank" rel="noopener noreferrer" class="hover:text-[#E1306C] transition" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>' +
+        '        <a href="https://listado.mercadolibre.com.ve/pagina/a1gorras2005ca/" target="_blank" rel="noopener noreferrer" class="hover:text-[#FFE600] transition" aria-label="MercadoLibre"><i class="fa-solid fa-store"></i></a>' +
+        '        <a href="https://wa.me/584226382165" target="_blank" rel="noopener noreferrer" class="hover:text-[#25D366] transition" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>' +
+        '      </div>' +
+        '    </div>' +
+        '  </div>' +
+        '</div>';
+
+    var floatingWaHtml =
+        '<a id="floating-wa" href="https://wa.me/584226382165?text=Hola%20A1%20GORRAS%202005%20C.A,%20quisiera%20informaci%C3%B3n%20sobre%20sus%20gorras." target="_blank" rel="noopener noreferrer" aria-label="Escríbenos por WhatsApp" title="Escríbenos por WhatsApp" class="fixed right-4 z-40 w-14 h-14 rounded-full bg-[#25D366] hover:bg-[#128C7E] text-[#0E0B1D] shadow-2xl shadow-[#25D366]/40 flex items-center justify-center text-2xl transition-transform hover:scale-110 active:scale-95" style="bottom:calc(1.25rem + env(safe-area-inset-bottom));">' +
+        '  <span class="absolute inset-0 rounded-full bg-[#25D366] opacity-30 animate-ping"></span>' +
+        '  <i class="fa-brands fa-whatsapp relative"></i>' +
+        '</a>';
 
     var footerHtml =
         '<footer class="bg-[#0E0B1D] border-t border-[#3A3A52] pt-12 pb-8 px-4 sm:px-6 text-sm text-[#C9C2E3]/80">' +
@@ -179,9 +223,45 @@
     var toastHtml = '<div id="toast-container" class="fixed bottom-5 left-1/2 -translate-x-1/2 z-50 pointer-events-none flex flex-col gap-2 w-[92%] max-w-md"></div>';
 
     var headerMount = document.getElementById('site-header');
-    if (headerMount) headerMount.innerHTML = headerHtml;
+    if (headerMount) headerMount.outerHTML = headerHtml;
     var footerMount = document.getElementById('site-footer');
     if (footerMount) footerMount.innerHTML = footerHtml;
 
-    document.body.insertAdjacentHTML('beforeend', cartHtml + modalHtml + toastHtml);
+    document.body.insertAdjacentHTML('beforeend', mobileMenuHtml + cartHtml + modalHtml + toastHtml + floatingWaHtml);
+
+    var lastFocused = null;
+
+    window.toggleMobileMenu = function (open) {
+        var menu = document.getElementById('mobile-menu');
+        var panel = document.getElementById('mobile-menu-panel');
+        var trigger = document.querySelector('[aria-controls="mobile-menu"]');
+        if (!menu || !panel) return;
+
+        if (open) {
+            lastFocused = document.activeElement;
+            menu.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            if (trigger) trigger.setAttribute('aria-expanded', 'true');
+            requestAnimationFrame(function () {
+                panel.style.transform = 'translateX(0)';
+            });
+        } else {
+            panel.style.transform = 'translateX(-100%)';
+            document.body.style.overflow = '';
+            if (trigger) trigger.setAttribute('aria-expanded', 'false');
+            window.setTimeout(function () {
+                menu.classList.add('hidden');
+            }, 300);
+            if (lastFocused && typeof lastFocused.focus === 'function') {
+                try { lastFocused.focus(); } catch (e) { }
+            }
+        }
+    };
+
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+            var menu = document.getElementById('mobile-menu');
+            if (menu && !menu.classList.contains('hidden')) window.toggleMobileMenu(false);
+        }
+    });
 })();
