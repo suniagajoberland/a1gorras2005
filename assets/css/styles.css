@@ -5,6 +5,7 @@ body {
     overflow-x: hidden;
 }
 
+
 /* overflow-x: clip evita el scroll horizontal sin romper position: sticky */
 @supports (overflow-x: clip) {
     body {

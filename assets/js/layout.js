@@ -55,7 +55,6 @@
         '    <div class="flex items-center gap-2 sm:gap-3">' +
         '      <a href="https://www.instagram.com/gorrasaunoca/" target="_blank" rel="noopener noreferrer" title="Instagram" aria-label="Instagram" class="hidden sm:inline-flex w-9 h-9 items-center justify-center rounded-xl bg-[#2A1E4D] hover:bg-[#3A3A52] text-[#C9C2E3] hover:text-[#E1306C] border border-[#5A3B8C] transition text-base"><i class="fa-brands fa-instagram"></i></a>' +
         '      <a href="https://listado.mercadolibre.com.ve/pagina/a1gorras2005ca/" target="_blank" rel="noopener noreferrer" title="Tienda MercadoLibre" aria-label="MercadoLibre" class="hidden sm:inline-flex w-9 h-9 items-center justify-center rounded-xl bg-[#2A1E4D] hover:bg-[#3A3A52] text-[#C9C2E3] hover:text-[#FFE600] border border-[#5A3B8C] transition text-base"><i class="fa-solid fa-store"></i></a>' +
-        '      <a href="https://wa.me/584226382165?text=Hola%20A1%20GORRAS%202005%20C.A,%20quisiera%20informaci%C3%B3n%20sobre%20sus%20gorras." target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-2 bg-[#2A1E4D] hover:bg-[#3A3A52] text-[#C9C2E3] border border-[#5A3B8C] px-3.5 py-2 rounded-xl text-xs font-semibold transition"><i class="fa-brands fa-whatsapp text-base text-[#25D366]"></i><span>Asesoría</span></a>' +
         '      <button onclick="toggleCart(true)" class="relative inline-flex items-center gap-2 bg-[#5A3B8C] hover:bg-[#8B7CC7] text-white hover:text-[#0E0B1D] font-bold px-3.5 sm:px-4 py-2 rounded-xl text-sm transition shadow-lg shadow-[#5A3B8C]/40">' +
         '        <i class="fa-solid fa-bag-shopping"></i><span class="hidden sm:inline">Carrito</span>' +
         '        <span id="cart-badge" class="bg-[#0E0B1D] text-[#C9C2E3] text-xs font-extrabold px-2 py-0.5 rounded-full border border-[#8B7CC7]/40">0</span>' +
@@ -83,11 +82,9 @@
         '        <span class="flex items-center gap-2"><i class="fa-solid fa-bag-shopping"></i> Mi Carrito</span>' +
         '        <span id="mobile-cart-badge" class="bg-[#0E0B1D] text-[#C9C2E3] text-xs font-extrabold px-2 py-0.5 rounded-full border border-[#8B7CC7]/40">0</span>' +
         '      </button>' +
-        '      <a href="https://wa.me/584226382165?text=Hola%20A1%20GORRAS%202005%20C.A,%20quisiera%20informaci%C3%B3n%20sobre%20sus%20gorras." target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#128C7E] text-[#0E0B1D] font-bold px-4 py-3 rounded-xl text-sm transition"><i class="fa-brands fa-whatsapp text-lg"></i> Asesoría por WhatsApp</a>' +
         '      <div class="flex items-center justify-center gap-5 pt-1 text-lg text-[#C9C2E3]">' +
         '        <a href="https://www.instagram.com/gorrasaunoca/" target="_blank" rel="noopener noreferrer" class="hover:text-[#E1306C] transition" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>' +
         '        <a href="https://listado.mercadolibre.com.ve/pagina/a1gorras2005ca/" target="_blank" rel="noopener noreferrer" class="hover:text-[#FFE600] transition" aria-label="MercadoLibre"><i class="fa-solid fa-store"></i></a>' +
-        '        <a href="https://wa.me/584226382165" target="_blank" rel="noopener noreferrer" class="hover:text-[#25D366] transition" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>' +
         '      </div>' +
         '    </div>' +
         '  </div>' +

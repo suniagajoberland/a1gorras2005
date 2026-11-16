@@ -43,7 +43,7 @@
   {
     "title": "Pack 12 Gorras Acrílicas Bordadas Personalizadas Unicolor Multicolor Un Drill",
     "price": "60.00",
-    "image": "https://http2.mlstatic.com/D_Q_NP_2X_896103-MLV112812832893_062026-E.webp",
+    "image": "productos/ml-pack12-896103.webp",
     "url": "https://articulo.mercadolibre.com.ve/MLV-777260171-pack-12-gorras-acrilicas-bordadas-personalizadas-unicolor-multicolor-un-drill-_JM#polycard_client=search-desktop&be_origin=backend&overlay_label=not_apply&search_layout=grid&position=4&type=item&tracking_id=ad4e835e-0cb9-43bb-a715-3dda38eae5e9&overlay_label_capability=not_apply&wid=MLV777260171&sid=search",
     "colors": [],
     "isMulti": false,
@@ -148,7 +148,7 @@
   {
     "title": "Pack 6 Gorras Acrílicas Bordadas Personalizadas Unicolor",
     "price": "36.00",
-    "image": "https://http2.mlstatic.com/D_Q_NP_2X_983281-MLV112816855419_062026-E.webp",
+    "image": "productos/ml-pack12-896103.webp",
     "url": "https://articulo.mercadolibre.com.ve/MLV-1013927420-pack-6-gorras-acrilicas-bordadas-personalizadas-unicolor-_JM?searchVariation=203391374149#polycard_client=search-desktop&searchVariation=203391374149&be_origin=backend&overlay_label=not_apply&search_layout=grid&position=13&type=item&tracking_id=ad4e835e-0cb9-43bb-a715-3dda38eae5e9&overlay_label_capability=not_apply&sid=search",
     "colors": [],
     "isMulti": false,
@@ -171,10 +171,17 @@
   {
     "title": "Pasamontañas Unicolor Para Niños",
     "price": "4.00",
-    "image": "https://http2.mlstatic.com/D_Q_NP_2X_903175-MLV109515144034_042026-E.webp",
+    "image": "productos/ml-pasamontanas-ninos-ref.webp",
     "url": "https://articulo.mercadolibre.com.ve/MLV-1001662038-pasamontanas-unicolor-para-ninos-_JM?searchVariation=200060186287#polycard_client=search-desktop&searchVariation=200060186287&be_origin=backend&overlay_label=not_apply&search_layout=grid&position=15&type=item&tracking_id=ad4e835e-0cb9-43bb-a715-3dda38eae5e9&overlay_label_capability=not_apply&sid=search",
     "colors": [
+      "#87CEEB",
+      "#4169E1",
+      "#F5F3DC",
       "#FF00EC",
+      "#9E9E9E",
+      "#A0522D",
+      "#9F00FF",
+      "#7CFC00",
       "#003D00"
     ],
     "isMulti": true,
@@ -211,7 +218,7 @@
   {
     "title": "Pack 24 Gorras Acrílicas Bordadas Personalizadas Unicolor Multicolor Un Drill",
     "price": "120.00",
-    "image": "https://http2.mlstatic.com/D_Q_NP_2X_636788-MLV112930715519_062026-E.webp",
+    "image": "productos/ml-pack12-896103.webp",
     "url": "https://articulo.mercadolibre.com.ve/MLV-777260871-pack-24-gorras-acrilicas-bordadas-personalizadas-unicolor-multicolor-un-drill-_JM#polycard_client=search-desktop&be_origin=backend&overlay_label=not_apply&search_layout=grid&position=18&type=item&tracking_id=ad4e835e-0cb9-43bb-a715-3dda38eae5e9&overlay_label_capability=not_apply&wid=MLV777260871&sid=search",
     "colors": [],
     "isMulti": false,
@@ -487,7 +494,7 @@
   {
     "title": "Pack 36 Gorras Acrílicas Bordadas Personalizadas Unicolor Multicolor Un Drill",
     "price": "180.00",
-    "image": "https://http2.mlstatic.com/D_Q_NP_2X_896103-MLV112812832893_062026-E.webp",
+    "image": "productos/ml-pack12-896103.webp",
     "url": "https://articulo.mercadolibre.com.ve/MLV-777261507-pack-36-gorras-acrilicas-bordadas-personalizadas-unicolor-multicolor-un-drill-_JM#polycard_client=search-desktop&be_origin=backend&overlay_label=not_apply&search_layout=grid&position=40&type=item&tracking_id=ad4e835e-0cb9-43bb-a715-3dda38eae5e9&overlay_label_capability=not_apply&wid=MLV777261507&sid=search",
     "colors": [],
     "isMulti": false,

@@ -206,11 +206,11 @@ let currentPage = 1;
                             </div>
 
                             <div class="relative my-3 flex flex-col items-center justify-center">
-                                <div class="w-full aspect-square flex items-center justify-center overflow-hidden">
+                                <div class="w-full aspect-square flex items-center justify-center overflow-hidden rounded-xl ${/ml-pack12-896103|ml-pasamontanas-ninos-ref/.test(activeColor.image || '') ? 'bg-[#221841] p-2' : ''}">
                                     <img id="img-${product.id}" src="${imageWithFallback(activeColor.image)}" alt="${escapeAttr(product.name)} color ${escapeAttr(activeColor.name)} - Gorras A1 GORRAS 2005 C.A Caracas"
                                          referrerpolicy="no-referrer" loading="lazy" decoding="async"
                                          onerror="this.onerror=null;this.src='https://placehold.co/400x400/2A1E4D/C9C2E3?text=A1+GORRAS'"
-                                         class="w-full h-full object-cover transition-transform duration-300 hover:scale-105">
+                                         class="w-full h-full ${/ml-pack12-896103|ml-pasamontanas-ninos-ref/.test(activeColor.image || '') ? 'object-contain product-img-clean' : 'object-cover'} transition-transform duration-300 hover:scale-105">
                                 </div>
                                 <span id="color-label-${product.id}" class="color-label mt-2 text-xs font-medium text-[#C9C2E3] bg-[#0E0B1D]/80 px-3 py-0.5 rounded-full border border-[#3A3A52]">
                                     Color: <strong class="text-white">${escapeHtml(activeColor.name)}</strong>
@@ -709,10 +709,10 @@ let currentPage = 1;
 
                 return `
                 <div class="bg-[#2A1E4D]/65 border border-[#3A3A52] rounded-2xl p-3.5 flex items-center gap-3">
-                    <div class="w-16 h-14 bg-[#0E0B1D] border border-[#3A3A52] rounded-xl p-1 flex items-center justify-center shrink-0 overflow-hidden">
+                    <div class="w-16 h-14 ${/ml-pack12-896103|ml-pasamontanas-ninos-ref/.test((item.colorObj||{}).image || '') ? 'bg-[#221841]' : 'bg-[#0E0B1D]'} border border-[#3A3A52] rounded-xl p-1 flex items-center justify-center shrink-0 overflow-hidden">
                         <img src="${imageWithFallback(item.colorObj.image)}" alt="${escapeAttr(product.name)}" referrerpolicy="no-referrer"
                              onerror="this.onerror=null;this.src='https://placehold.co/80x80/2A1E4D/C9C2E3?text=A1'"
-                             class="max-h-full max-w-full object-contain">
+                             class="max-h-full max-w-full object-contain ${/ml-pack12-896103|ml-pasamontanas-ninos-ref/.test((item.colorObj||{}).image || '') ? 'product-img-clean' : ''}">
                     </div>
                     <div class="flex-1 min-w-0">
                         <div class="flex items-start justify-between gap-2">
