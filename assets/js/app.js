@@ -30,9 +30,12 @@ let currentPage = 1;
 
         const selectedColorState = {};
         const cardQtyState = {};
+        const cardImages = {};
+        const MAX_CARD_IMAGES = 4;
         products.forEach((p) => {
             selectedColorState[p.id] = 0;
             cardQtyState[p.id] = 1;
+            cardImages[p.id] = [];
         });
 
         const CUSTOM_TYPES = [
@@ -277,7 +280,7 @@ let currentPage = 1;
                         </div>
 
                         <!-- BACK: PERSONALIZATION FORM -->
-                        <div class="flip-card-back bg-[#2A1E4D] border acc-card-back p-5 flex flex-col justify-between">
+                        <div class="flip-card-back bg-[#2A1E4D] border acc-card-back p-5 flex flex-col justify-between overflow-y-auto">
                             <div>
                                 <div class="flex items-center justify-between border-b border-[#3A3A52] pb-3 mb-3">
                                     <div class="min-w-0">
@@ -312,6 +315,19 @@ let currentPage = 1;
                                         <input type="text" id="ptext-${product.id}" placeholder="Ej. Mi Logo / Iniciales"
                                                class="w-full bg-[#0E0B1D] border border-[#3A3A52] focus:border-[#8B7CC7] rounded-xl px-3 py-2 text-sm text-white placeholder-[#C9C2E3]/40 focus:outline-none">
                                     </div>
+                                    <div>
+                                        <div class="flex items-center justify-between mb-1">
+                                            <label class="block text-[11px] text-[#C9C2E3]">Imágenes del arte (máx. 4)</label>
+                                            <span class="text-[10px] font-semibold text-[#8B7CC7]"><span id="pimg-count-${product.id}">0</span>/4</span>
+                                        </div>
+                                        <label for="pimg-${product.id}" class="flex items-center justify-center gap-2 w-full bg-[#0E0B1D] border border-dashed border-[#3A3A52] hover:border-[#8B7CC7] rounded-xl px-3 py-2.5 text-xs text-[#C9C2E3] cursor-pointer transition">
+                                            <i class="fa-solid fa-image text-[#8B7CC7]"></i>
+                                            <span>Adjuntar logo / foto de referencia</span>
+                                        </label>
+                                        <input type="file" id="pimg-${product.id}" accept="image/*" multiple class="hidden" onchange="handleCardImages('${product.id}', this)">
+                                        <p class="text-[10px] text-[#C9C2E3]/60 mt-1">Muestra lo que tienes en mente para bordar (JPG, PNG, WEBP).</p>
+                                        <div id="pimg-preview-${product.id}" class="grid grid-cols-4 gap-2 mt-2"></div>
+                                    </div>
                                     <button type="submit" class="w-full acc-btn font-bold py-2.5 px-4 rounded-xl text-xs flex items-center justify-center gap-2">
                                         <i class="fa-solid fa-cart-plus"></i>
                                         <span>Agregar Personalizado</span>
@@ -319,11 +335,11 @@ let currentPage = 1;
                                 </form>
                             </div>
 
-                            <a id="wa-back-btn-${product.id}" href="${buildDirectProductWALink(product, activeColor, qtyVal)}" target="_blank" rel="noopener noreferrer"
+                            <button type="button" onclick="sendCustomToWhatsApp('${product.id}')"
                                class="mt-3 w-full bg-[#25D366] hover:bg-[#128C7E] text-[#0E0B1D] font-bold py-2.5 px-4 rounded-xl text-xs transition flex items-center justify-center gap-2">
                                 <i class="fa-brands fa-whatsapp text-base"></i>
-                                <span>Pedir directo por WhatsApp</span>
-                            </a>
+                                <span>Enviar personalización por WhatsApp</span>
+                            </button>
                         </div>
 
                     </div>
@@ -400,8 +416,6 @@ let currentPage = 1;
             const link = buildDirectProductWALink(product, colorObj, qty);
             const waBtn = document.getElementById(`wa-btn-${productId}`);
             if (waBtn) waBtn.href = link;
-            const waBack = document.getElementById(`wa-back-btn-${productId}`);
-            if (waBack) waBack.href = link;
         }
 
         function selectProductColor(productId, colorIndex) {
@@ -438,6 +452,113 @@ let currentPage = 1;
             updateCardWALink(productId);
         }
 
+        // 7b. IMÁGENES DE REFERENCIA DEL ARTE (máx. 4 por gorra)
+        function handleCardImages(productId, input) {
+            const current = cardImages[productId] || [];
+            const incoming = Array.from(input.files || []);
+            let rejected = false;
+
+            for (const file of incoming) {
+                if (!file.type.startsWith('image/')) continue;
+                if (current.length >= MAX_CARD_IMAGES) { rejected = true; break; }
+                current.push({ file, url: URL.createObjectURL(file) });
+            }
+
+            cardImages[productId] = current;
+            input.value = '';
+            renderCardImagePreviews(productId);
+
+            if (rejected) showToast(`Máximo ${MAX_CARD_IMAGES} imágenes por gorra.`, 'info');
+        }
+
+        function removeCardImage(productId, index) {
+            const current = cardImages[productId] || [];
+            const removed = current.splice(index, 1)[0];
+            if (removed && removed.url) URL.revokeObjectURL(removed.url);
+            cardImages[productId] = current;
+            renderCardImagePreviews(productId);
+        }
+
+        function renderCardImagePreviews(productId) {
+            const current = cardImages[productId] || [];
+            const countEl = document.getElementById(`pimg-count-${productId}`);
+            if (countEl) countEl.textContent = current.length;
+            const preview = document.getElementById(`pimg-preview-${productId}`);
+            if (!preview) return;
+            preview.innerHTML = current.map((img, idx) => `
+                <div class="relative">
+                    <img src="${img.url}" alt="Arte ${idx + 1}" class="w-full h-14 object-cover rounded-lg border border-[#3A3A52]">
+                    <button type="button" onclick="removeCardImage('${productId}', ${idx})" title="Quitar imagen"
+                            class="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-red-500 hover:bg-red-600 text-white text-[10px] flex items-center justify-center shadow">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>`).join('');
+        }
+
+        function buildCustomMessage(productId) {
+            const product = products.find((p) => p.id === productId);
+            if (!product) return null;
+            const colorIdx = selectedColorState[productId] || 0;
+            const colorObj = product.colors[colorIdx];
+            const qty = cardQtyState[productId] || 1;
+            const typeEl = document.getElementById(`ptype-${productId}`);
+            const posEl = document.getElementById(`ppos-${productId}`);
+            const textEl = document.getElementById(`ptext-${productId}`);
+            const type = typeEl ? typeEl.value : "";
+            const pos = posEl ? posEl.value : "";
+            const text = textEl ? textEl.value.trim() : "";
+            const images = cardImages[productId] || [];
+
+            let msg = `Hola *A1 GORRAS 2005 C.A* 👋, quiero personalizar una gorra.\n\n` +
+                `🧢 *Modelo:* ${product.name}\n` +
+                `🎨 *Color:* ${colorObj.name}\n` +
+                `🔢 *Cantidad:* ${qty} unds\n` +
+                `🪡 *Trabajo:* ${type}\n` +
+                `📍 *Ubicación:* ${pos}\n` +
+                (text ? `✍️ *Texto / Idea:* ${text}\n` : '') +
+                (images.length ? `🖼️ *Adjunto ${images.length} imagen(es) de referencia para el bordado.*\n` : '') +
+                `\n¿Me confirman disponibilidad y precio?`;
+            return { product, colorObj, qty, type, pos, text, images, msg };
+        }
+
+        function sendCustomToWhatsApp(productId) {
+            const data = buildCustomMessage(productId);
+            if (!data) return;
+            const { msg, images } = data;
+
+            if (images.length && navigator.share) {
+                const shareData = { text: msg };
+                const files = images.map((im) => im.file);
+                if (!navigator.canShare || navigator.canShare({ files })) {
+                    shareData.files = files;
+                    navigator.share(shareData)
+                        .then(() => showToast('¡Listo! Continúa el chat en WhatsApp con tus imágenes.', 'success'))
+                        .catch(() => openWaFallback(data));
+                    return;
+                }
+            }
+            openWaFallback(data);
+        }
+
+        function openWaFallback(data) {
+            const { msg, images, product } = data;
+            const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+            window.open(url, '_blank', 'noopener,noreferrer');
+
+            if (images.length) {
+                showToast('WhatsApp abierto. Adjunta las imágenes de referencia (se están descargando).', 'info');
+                images.forEach((im, i) => setTimeout(() => {
+                    const ext = (im.file.name.split('.').pop() || 'jpg').toLowerCase();
+                    const a = document.createElement('a');
+                    a.href = im.url;
+                    a.download = `arte-${product.id}-${i + 1}.${ext}`;
+                    document.body.appendChild(a);
+                    a.click();
+                    a.remove();
+                }, 350 * (i + 1)));
+            }
+        }
+
         // 8. SHOPPING CART LOGIC (TIERED PRICING)
         function addToCart(productId, custom) {
             const product = products.find((p) => p.id === productId);
@@ -445,8 +566,9 @@ let currentPage = 1;
             const colorIdx = selectedColorState[productId] || 0;
             const colorObj = product.colors[colorIdx];
             const qtyToAdd = cardQtyState[productId] || 1;
-            const cust = custom || { type: "Gorra Lisa (Sin Personalizar)", pos: "", text: "" };
-            const sig = `${cust.type}|${cust.pos}|${cust.text || ""}`;
+            const cust = custom || { type: "Gorra Lisa (Sin Personalizar)", pos: "", text: "", images: [] };
+            if (!cust.images) cust.images = [];
+            const sig = `${cust.type}|${cust.pos}|${cust.text || ""}|${cust.images.length}`;
 
             const existing = cart.find((item) => item.productId === productId && item.colorName === colorObj.name && item.sig === sig);
             if (existing) {
@@ -476,9 +598,12 @@ let currentPage = 1;
             const type = document.getElementById(`ptype-${productId}`).value;
             const pos = document.getElementById(`ppos-${productId}`).value;
             const text = document.getElementById(`ptext-${productId}`).value.trim();
-            addToCart(productId, { type, pos, text });
+            const images = (cardImages[productId] || []).map((im) => ({ file: im.file, url: im.url }));
+            addToCart(productId, { type, pos, text, images });
             const form = document.getElementById(`pform-${productId}`);
             if (form) form.reset();
+            cardImages[productId] = [];
+            renderCardImagePreviews(productId);
             toggleCardFlip(productId);
         }
 
@@ -576,6 +701,9 @@ let currentPage = 1;
                 const customLine = hasCustom
                     ? `<div class="text-[11px] text-[#8B7CC7] mb-2"><i class="fa-solid fa-wand-magic-sparkles mr-1"></i>${escapeHtml(item.custom.type)}${item.custom.pos ? ' • ' + escapeHtml(item.custom.pos) : ''}${item.custom.text ? ' • "' + escapeHtml(item.custom.text) + '"' : ''}</div>`
                     : '';
+                const imagesLine = (item.custom && item.custom.images && item.custom.images.length)
+                    ? `<div class="flex flex-wrap gap-1.5 mb-2">${item.custom.images.map((im, ii) => `<img src="${im.url}" alt="Arte ${ii + 1}" class="w-9 h-9 object-cover rounded-md border border-[#3A3A52]">`).join('')}</div>`
+                    : '';
 
                 return `
                 <div class="bg-[#2A1E4D]/65 border border-[#3A3A52] rounded-2xl p-3.5 flex items-center gap-3">
@@ -593,6 +721,7 @@ let currentPage = 1;
                         </div>
                         <div class="text-xs text-[#C9C2E3]/80 mb-1">Color: <span class="text-white">${escapeHtml(item.colorName)}</span></div>
                         ${customLine}
+                        ${imagesLine}
                         <div class="flex items-center justify-between gap-2">
                             <div class="inline-flex items-center bg-[#0E0B1D] border border-[#3A3A52] rounded-lg">
                                 <button type="button" onclick="updateItemQty(${idx}, -1)" class="w-7 h-7 flex items-center justify-center text-[#C9C2E3] hover:text-white font-bold">-</button>
@@ -650,8 +779,11 @@ let currentPage = 1;
                 const subUSD = unitPrice * item.qty;
                 totalUSD += subUSD;
                 let line = `${index + 1}. *${product.name}* (${item.colorName}) x${item.qty} unds — ${formatUSD(subUSD)}\n`;
-                if (item.custom && (item.custom.type !== "Gorra Lisa (Sin Personalizar)" || item.custom.text)) {
+                if (item.custom && (item.custom.type !== "Gorra Lisa (Sin Personalizar)" || item.custom.text || (item.custom.images && item.custom.images.length))) {
                     line += `   ↳ Personalización: ${item.custom.type}${item.custom.pos ? ' / ' + item.custom.pos : ''}${item.custom.text ? ' / "' + item.custom.text + '"' : ''}\n`;
+                    if (item.custom.images && item.custom.images.length) {
+                        line += `   ↳ ${item.custom.images.length} imagen(es) de referencia adjunta(s)\n`;
+                    }
                 }
                 itemsListText += line;
             });
@@ -675,14 +807,33 @@ let currentPage = 1;
 
             const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(orderMessage)}`;
 
+            const allImages = [];
+            cart.forEach((item) => {
+                if (item.custom && item.custom.images) {
+                    item.custom.images.forEach((im) => { if (im.file) allImages.push(im.file); });
+                }
+            });
+
+            const finishOrder = () => {
+                cart = [];
+                document.getElementById('checkout-form').reset();
+                updateCartUI();
+                toggleCart(false);
+                showToast('¡Pedido enviado a WhatsApp! Tu carrito y datos se han limpiado automáticamente.', 'success');
+            };
+
+            if (allImages.length && navigator.share && (!navigator.canShare || navigator.canShare({ files: allImages }))) {
+                navigator.share({ text: orderMessage, files: allImages })
+                    .then(finishOrder)
+                    .catch(() => {
+                        window.open(waUrl, '_blank', 'noopener,noreferrer');
+                        finishOrder();
+                    });
+                return;
+            }
+
             window.open(waUrl, '_blank', 'noopener,noreferrer');
-
-            cart = [];
-            document.getElementById('checkout-form').reset();
-            updateCartUI();
-            toggleCart(false);
-
-            showToast('¡Pedido enviado a WhatsApp! Tu carrito y datos se han limpiado automáticamente.', 'success');
+            finishOrder();
         }
 
         // 10. GOOGLE REVIEWS
