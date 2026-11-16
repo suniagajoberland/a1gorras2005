@@ -14,4 +14,4 @@ User-agent: Googlebot-Image
 Allow: /
 
 # Sitemap
-Sitemap: https://www.a1gorras2005.com/sitemap.xml
+Sitemap: https://a1gorras2005.vercel.app/sitemap.xml
